@@ -1,3 +1,135 @@
-body {
-  background-color: red;
+@import "~antd/dist/antd.less";
+@primary-color: #59317D;
+// @primary-color: #FFC917;
+@main-background: #FEFEFF;
+@body-background: #FFFFFE;
+@layout-body-background: @main-background;
+@basic-text-color: #313131;
+@second-text-color: #6F6F6F;
+@border-color: #CBCBCB;
+
+// DR Colors:
+@dr-light-grey: #F0F0F0;
+@dr-lighter-grey:#F5F5F6;
+@dr-grey: #919191;
+@dr-dark-grey: #6F6E6E;
+@dr-darker-grey: #575656;
+//
+html, body, #root {
+  height: 100%;
+  font-weight: light;
+}
+
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,400i,600,700');
+
+
+/* Define the "system" font family */
+@font-face {
+  font-family: system-light;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: system-medium;
+  font-style: normal;
+  font-weight: 400;
+  src: local(".SFNSText-Medium"), local(".HelveticaNeueDeskInterface-Medium"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Medium"), local("Roboto"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: system-bold;
+  font-style: normal;
+  font-weight: 700;
+  src: local(".SFNSText-Bold"), local(".HelveticaNeueDeskInterface-Bold"), local(".LucidaGrandeUI"), local("Ubuntu Bold"), local("Segoe UI Bold"), local("Roboto"), local("DroidSans"), local("Tahoma");
+}
+
+/* Now, let's apply it on an element */
+* {
+  font-family: "system-light";
+}
+
+.ant-layout-sider * {
+  // font-family:  "system-light";
+  font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
+}
+
+
+// ATOMS: BASIC ELEMENTS
+
+h1 {
+  // color: @primary-color;
+  color: @dr-dark-grey;
+  font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
+  font-weight: 200;
+}
+
+.titleBack {
+  background-color: @dr-lighter-grey;
+  padding: 1em;
+}
+
+
+.logo {
+  width: 200px;
+  height: 220px;
+}
+
+
+// Layout
+
+// Components
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item {
+  background-color: @dr-lighter-grey;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  color: @basic-text-color;
+  background-color: @main-background;
+  font-weight: 600;
+
+  & > a, & > a:hover {
+    color: @basic-text-color;
+  }
+}
+
+.ant-menu-item > a:hover {
+  color: @basic-text-color;
+}
+
+.ant-menu-vertical .ant-menu-item:after,
+.ant-menu-vertical-left .ant-menu-item:after,
+.ant-menu-vertical-right .ant-menu-item:after,
+.ant-menu-inline .ant-menu-item:after {
+  // border-right: 2px solid @basic-text-color;
+  // border-right-width: 2px;
+  // border-right-style: solid;
+  // border-right-color: @basic-text-color;
+  border: none;
+}
+
+.ant-menu-item:hover,
+.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-submenu-title:hover {
+  color: @second-text-color;
+}
+
+.ant-menu-item-active, .ant-menu-submenu-active,
+.ant-menu-item:active, .ant-menu-submenu:active {
+  background: none;
+  border: none;
+  font-weight: medium;
+  color: @second-text-color;
+}
+
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+  border: none;
+}
+
+.ant-layout-sider-trigger {
+  color: @dr-dark-grey;
+  background-color: @dr-light-grey;
 }
