@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Menu, Dropdown, Icon, Divider, Input } from 'antd';
+import { Tabs, Menu, Dropdown, Icon, Divider, Input, Radio, Switch, Checkbox } from 'antd';
+const CheckboxGroup = Checkbox.Group;
+const RadioGroup = Radio.Group;
 const SubMenu = Menu.SubMenu;
+const TabPane = Tabs.TabPane;
 
 const dropdownMenu = (
   <Menu>
@@ -18,7 +21,31 @@ const dropdownMenu = (
 );
 
 
+const plainOptions = ['Apple', 'Pear', 'Orange'];
+const checkboxOptions = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange' },
+];
+const optionsWithDisabled = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange', disabled: false },
+];
+
+
 export default class Components extends Component {
+
+  state = {
+    radioValue: 3
+  }
+
+  onRadioChange = (e) => {
+    this.setState({
+      radioValue: e.target.value,
+    });
+  }
+
   render() {
 
     const inputStyle= {
@@ -28,18 +55,75 @@ export default class Components extends Component {
 
     return (
       <div>
-        <h3>Dropdown</h3>
-        <Dropdown overlay={dropdownMenu}>
-          <a className="ant-dropdown-link" href="#">
-            Cascading menu <Icon type="down" />
-          </a>
-        </Dropdown>
-        <Divider />
+        <Tabs type="card" size="large" >
+          <TabPane tab="Atoms" key="1">
+            <section className={'displayCard'} style={{paddingBottom: 180}}>
+              <h2>Dropdown</h2>
+              <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
+                <a className="ant-dropdown-link" href="#">
+                  Cascading menu <Icon type="down" />
+                </a>
+              </Dropdown>
 
-        <h3>Inputs</h3>
-        <Input style={inputStyle} size="large" placeholder="large size" />
-        <Input style={inputStyle} placeholder="default size" />
-        <Input style={inputStyle} size="small" placeholder="small size" />
+            </section>
+
+            <Divider />
+
+            <section className={'displayCard'} >
+              <h2>Inputs</h2>
+              <Input style={inputStyle} size="large" placeholder="large size" />
+              <Input style={inputStyle} placeholder="default size" />
+              <Input style={inputStyle} size="small" placeholder="small size" />
+            </section>
+
+            <Divider />
+
+            <section className={'displayCard'} >
+              <h2>Radio</h2>
+                <RadioGroup style={{paddingTop: '1em'}} onChange={this.onRadioChange} value={this.state.radioValue}>
+                  <Radio value={1}>A</Radio>
+                  <Radio value={2}>B</Radio>
+                  <Radio value={3}>C</Radio>
+                  <Radio value={4}>D</Radio>
+                </RadioGroup>
+            </section>
+
+            <Divider />
+
+            <section className={'displayCard'} >
+              <h2>Checkbox</h2>
+              <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
+                <br /><br />
+                <CheckboxGroup options={checkboxOptions} defaultValue={['Pear']} />
+                <br /><br />
+              <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['Apple']} />
+            </section>
+
+            <Divider />
+
+
+            <section className={'displayCard'} >
+              <h2>Switch</h2>
+              <Switch defaultChecked />
+            </section>
+
+            <Divider />
+
+            <section className={'displayCard'} >
+              <h2></h2>
+            </section>
+
+            <Divider />
+
+            <section className={'displayCard'} >
+              <h2></h2>
+            </section>
+          </TabPane>
+
+          <TabPane tab="Molecules" key="2">
+          </TabPane>
+        </Tabs>
+
       </div>
     );
   }

@@ -1,19 +1,26 @@
-@import "~antd/dist/antd.less";
-@primary-color: #59317D;
-// @primary-color: #FFC917;
-@main-background: #FEFEFF;
-@body-background: #FFFFFE;
-@layout-body-background: @main-background;
-@basic-text-color: #313131;
-@second-text-color: #6F6F6F;
-@border-color: #CBCBCB;
-
 // DR Colors:
 @dr-light-grey: #F0F0F0;
 @dr-lighter-grey:#F5F5F6;
 @dr-grey: #919191;
 @dr-dark-grey: #6F6E6E;
 @dr-darker-grey: #575656;
+
+
+@import "~antd/dist/antd.less";
+// @primary-color: #59317D;
+@primary-color: #2f54eb;
+// @primary-color: #FFC917;
+@main-background: #FEFEFF;
+@body-background: #FFFFFE;
+@layout-body-background: @main-background;
+
+@border-radius: 2px;
+@text-shadow: 0px 1px 1px #fff;
+
+@basic-text-color: #313131;
+@second-text-color: #6F6F6F;
+@border-color: #CBCBCB;
+
 //
 html, body, #root {
   height: 100%;
@@ -55,6 +62,7 @@ html, body, #root {
 .ant-layout-sider * {
   // font-family:  "system-light";
   font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
+  text-shadow: @text-shadow;
 }
 
 
@@ -65,11 +73,17 @@ h1 {
   color: @dr-dark-grey;
   font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
   font-weight: 200;
+  text-shadow: @text-shadow;
+}
+
+h2, h3 {
+  font-weight: 200;
+  color: @dr-darker-grey;
 }
 
 .titleBack {
   background-color: @dr-lighter-grey;
-  padding: 1em;
+  padding: 1em 1em 0;
 }
 
 
@@ -132,4 +146,77 @@ h1 {
 .ant-layout-sider-trigger {
   color: @dr-dark-grey;
   background-color: @dr-light-grey;
+}
+
+.ant-input {
+  transition-duration: .1s;
+
+  &:hover {
+    border-color: @dr-dark-grey;
+  }
+
+  &:focus {
+    border: solid @dr-dark-grey 1px;
+    box-shadow: 0 0 0 1px @dr-dark-grey;;
+  }
+}
+
+
+// RADIO
+
+.ant-radio-checked::after {
+  border: 1px solid @dr-dark-grey;
+}
+
+.ant-radio-inner::after {
+  background-color: @dr-darker-grey;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: @dr-darker-grey;
+}
+
+.ant-radio-wrapper:hover .ant-radio .ant-radio-inner, .ant-radio:hover .ant-radio-inner, .ant-radio-focused .ant-radio-inner {
+  border-color: @dr-dark-grey;
+}
+
+
+// SELECT
+
+.ant-dropdown-menu {
+  border: 1px solid @dr-grey;
+  box-shadow: none;
+}
+
+.ant-dropdown-menu-item:hover,
+.ant-dropdown-menu-submenu-title:hover {
+  background-color: @dr-lighter-grey;
+}
+
+// SWITCH
+.ant-switch-checked {
+  background-color: @dr-darker-grey;
+}
+
+// CHECKBOX
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-checkbox-indeterminate .ant-checkbox-inner {
+  background-color: @dr-dark-grey;
+  border-color: @dr-dark-grey;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: @dr-grey;
+}
+
+// Components
+
+.displayCard {
+  display: inline-block;
+  padding: 1em;
+  background-color: @body-background;
+  border: 1px solid @dr-light-grey;
+  border-radius: @border-radius;
+  min-width: 360px;
+  max-width: 360px;
 }

@@ -23,10 +23,10 @@ export default class BeeNav extends Component {
             <span>GUIDELINES</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="style" >
-          <NavLink to={"/style"}>
+        <Menu.Item key="styles" >
+          <NavLink to={"/styles"}>
             <Icon type="skin" style={{fontWeight: 'bold'}} />
-            <span>STYLE</span>
+            <span>STYLES</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="components" >

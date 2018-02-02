@@ -33,9 +33,9 @@ export default class BeeLayout extends Component {
         </Sider>
         <Layout style={{ background: '#FEFEFF' }}>
           <BeeHeader>
-            <h1>Title of the page</h1>
+            <h1>Components</h1>
           </BeeHeader>
-          <Content style={{ margin: 0, padding: '2em', background: '#FFFFFE', height: '100%' }}>
+          <Content style={{ margin: 0, padding: '2em', background: '#FEFEFF', height: '100%' }}>
             {this.props.children}
           </Content>
         </Layout>
