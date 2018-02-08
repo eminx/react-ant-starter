@@ -9,6 +9,7 @@ import Principles from './Principles';
 import Guidelines from './Guidelines';
 import Styles from './Styles';
 import Components from './Components';
+import LoginManager from './LoginManager';
 
 const browserHistory = createBrowserHistory();
 
@@ -21,6 +22,7 @@ export const renderRoutes = () => (
         <Route exact path="/guidelines" component={Guidelines} />
         <Route exact path="/styles" component={Styles} />
         <Route exact path="/components" component={Components} />
+        <Route exact path="/login" component={LoginManager} />
         <Route path="*" component={Home} />
       </Switch>
     </BeeLayout>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, Menu, Dropdown, Icon, Divider, Input, Radio, Switch, Checkbox } from 'antd';
+import { Tabs, Menu, Dropdown, Icon, Divider, Input, Radio, Switch, Checkbox, AutoComplete, Cascader } from 'antd';
 const CheckboxGroup = Checkbox.Group;
 const RadioGroup = Radio.Group;
 const SubMenu = Menu.SubMenu;
@@ -20,6 +20,31 @@ const dropdownMenu = (
   </Menu>
 );
 
+const cascaderOptions = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hanzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+    }],
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+    }],
+  }],
+}];
+
+
 
 const plainOptions = ['Apple', 'Pear', 'Orange'];
 const checkboxOptions = [
@@ -37,7 +62,18 @@ const optionsWithDisabled = [
 export default class Components extends Component {
 
   state = {
-    radioValue: 3
+    radioValue: 3,
+    autoCompleteDataSource: []
+  }
+
+  handleSearch = (value) => {
+    this.setState({
+      autoCompleteDataSource: !value ? [] : [
+        value,
+        value + value,
+        value + value + value,
+      ],
+    });
   }
 
   onRadioChange = (e) => {
@@ -57,7 +93,7 @@ export default class Components extends Component {
       <div>
         <Tabs type="card" size="large" >
           <TabPane tab="Atoms" key="1">
-            <section className={'displayCard'} style={{paddingBottom: 180}}>
+            <section className={'editCard'} style={{paddingBottom: 180}}>
               <h2>Dropdown</h2>
               <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
                 <a className="ant-dropdown-link" href="#">
@@ -69,7 +105,7 @@ export default class Components extends Component {
 
             <Divider />
 
-            <section className={'displayCard'} >
+            <section className={'editCard'} >
               <h2>Inputs</h2>
               <Input style={inputStyle} size="large" placeholder="large size" />
               <Input style={inputStyle} placeholder="default size" />
@@ -78,7 +114,7 @@ export default class Components extends Component {
 
             <Divider />
 
-            <section className={'displayCard'} >
+            <section className={'editCard'} >
               <h2>Radio</h2>
                 <RadioGroup style={{paddingTop: '1em'}} onChange={this.onRadioChange} value={this.state.radioValue}>
                   <Radio value={1}>A</Radio>
@@ -90,7 +126,7 @@ export default class Components extends Component {
 
             <Divider />
 
-            <section className={'displayCard'} >
+            <section className={'editCard'} >
               <h2>Checkbox</h2>
               <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
                 <br /><br />
@@ -102,22 +138,35 @@ export default class Components extends Component {
             <Divider />
 
 
-            <section className={'displayCard'} >
+            <section className={'editCard'} >
               <h2>Switch</h2>
               <Switch defaultChecked />
             </section>
 
             <Divider />
 
-            <section className={'displayCard'} >
-              <h2></h2>
+            <section className={'editCard'} style={{minHeight: 200}} >
+              <h2>AutoComplete</h2>
+              <AutoComplete
+                dataSource={this.state.autoCompleteDataSource}
+                onSearch={this.handleSearch}
+                placeholder="input here"
+              />
             </section>
 
             <Divider />
 
-            <section className={'displayCard'} >
-              <h2></h2>
+            <section className={'editCard'} style={{minHeight: 400}} >
+              <h2>Cascader (Hierarchical Dropdown)</h2>
+              <Cascader
+                style={{width: '100%'}}
+                options={cascaderOptions}
+                changeOnSelect
+              />
             </section>
+
+
+
           </TabPane>
 
           <TabPane tab="Molecules" key="2">

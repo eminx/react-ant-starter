@@ -7,15 +7,16 @@
 
 
 @import "~antd/dist/antd.less";
+@import "./flex.less";
 // @primary-color: #59317D;
 @primary-color: #2f54eb;
 // @primary-color: #FFC917;
 @main-background: #FEFEFF;
-@body-background: #FFFFFE;
+@paper-background: #FFFFFE;
 @layout-body-background: @main-background;
 
 @border-radius: 2px;
-@text-shadow: 0px 1px 1px #fff;
+@text-shadow: 0 0 1px #fff;
 
 @basic-text-color: #313131;
 @second-text-color: #6F6F6F;
@@ -25,6 +26,7 @@
 html, body, #root {
   height: 100%;
   font-weight: light;
+  background-color: @dr-dark-grey;
 }
 
 
@@ -56,6 +58,10 @@ html, body, #root {
 
 /* Now, let's apply it on an element */
 * {
+  font-family: "system-medium";
+}
+
+a {
   font-family: "system-light";
 }
 
@@ -78,12 +84,12 @@ h1 {
 
 h2, h3 {
   font-weight: 200;
+  font-family: "system-light";
   color: @dr-darker-grey;
 }
 
 .titleBack {
-  background-color: @dr-lighter-grey;
-  padding: 1em 1em 0;
+  // background-color: @dr-lighter-grey;
 }
 
 
@@ -93,20 +99,32 @@ h2, h3 {
 }
 
 
-// Layout
+// Layout - Nav
+
+.ant-layout-sider .ant-menu-inline .ant-menu-item {
+  font-size: 18px;
+}
 
 // Components
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item {
   background-color: @dr-lighter-grey;
-}
 
-.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  color: @basic-text-color;
-  background-color: @main-background;
-  font-weight: 600;
+  &:hover {
+    background-color: fade(@main-background, 40%);
+  }
 
-  & > a, & > a:hover {
+  &-selected {
     color: @basic-text-color;
+    background-color: fade(@main-background, 80%);
+    // font-weight: 600;
+
+    & > a, & > a:hover {
+      color: @basic-text-color;
+    }
+
+    &:hover {
+      background-color: fade(@main-background, 80%);
+    }
   }
 }
 
@@ -148,8 +166,10 @@ h2, h3 {
   background-color: @dr-light-grey;
 }
 
-.ant-input {
+.ant-input,
+.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
   transition-duration: .1s;
+  border-color: @dr-grey;
 
   &:hover {
     border-color: @dr-dark-grey;
@@ -157,7 +177,30 @@ h2, h3 {
 
   &:focus {
     border: solid @dr-dark-grey 1px;
-    box-shadow: 0 0 0 1px @dr-dark-grey;;
+    box-shadow: inset 0 0 0 1px @dr-dark-grey;
+  }
+}
+
+.ant-cascader-picker:focus .ant-cascader-input {
+  border: solid @dr-dark-grey 1px;
+  box-shadow: 0 0 0 1px @dr-dark-grey;
+}
+
+.ant-select-auto-complete.ant-select {
+  .ant-input {
+    &:focus, &:hover, {
+      border-color: @dr-dark-grey;
+    }
+  }
+}
+
+.ant-select-dropdown-menu-item, .ant-cascader-menu-item {
+  &:hover {
+    background-color: @dr-lighter-grey;
+  }
+  &-active {
+    background-color: @dr-light-grey;
+    font-weight: bold;
   }
 }
 
@@ -183,14 +226,25 @@ h2, h3 {
 
 // SELECT
 
-.ant-dropdown-menu {
+.bee-container, .ant-dropdown-menu, .ant-select-dropdown, .ant-cascader-menus {
   border: 1px solid @dr-grey;
   box-shadow: none;
+  border-radius: 4px;
 }
 
-.ant-dropdown-menu-item:hover,
-.ant-dropdown-menu-submenu-title:hover {
-  background-color: @dr-lighter-grey;
+.ant-popover-inner {
+  box-shadow: 0 0 0 1px @dr-grey;
+}
+.ant-popover-placement-bottomRight > .ant-popover-content > .ant-popover-arrow {
+  border-top: 1px solid @dr-grey;
+  border-left: 1px solid @dr-grey;
+}
+
+.ant-dropdown-menu-item,
+.ant-dropdown-menu-submenu-title {
+  &:hover {
+    background-color: @dr-lighter-grey;
+  }
 }
 
 // SWITCH
@@ -209,14 +263,29 @@ h2, h3 {
   border-color: @dr-grey;
 }
 
+// Tabs
+.ant-tabs-nav-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+
 // Components
+.editCard {
+  display: inline-block;
+  padding: 2em;
+  background-color: @main-background;
+  border: 1px solid @dr-grey;
+  border-radius: @border-radius;
+  min-width: 275px;
+  max-width: 420px;
+}
 
 .displayCard {
   display: inline-block;
   padding: 1em;
-  background-color: @body-background;
+  background-color: @paper-background;
   border: 1px solid @dr-light-grey;
   border-radius: @border-radius;
-  min-width: 360px;
-  max-width: 360px;
+  width: 100%;
 }

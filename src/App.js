@@ -18,7 +18,7 @@ class App extends Component {
 
   render() {
     return (
-      <Layout style={{height: '100%', background: '#F5F5F6'}}>
+      <Layout style={{height: '100%'}>
         <Sider
           style={{ background: '#F5F5F6' }}
           width={240}
@@ -60,11 +60,11 @@ class App extends Component {
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout style={{ background: '#FEFEFF' }}>
+        <Layout >
           <Header style={{ background: '#F5F5F6' }}>
 
           </Header>
-          <Content style={{ margin: 0, padding: 0, background: '#FFFFFE', height: '100%' }}>
+          <Content style={{ margin: 0, padding: 0, height: '100%' }}>
             <div className={'titleBack'}>
               <h1>Title of the page</h1>
             </div>
