@@ -57,20 +57,13 @@ html, body, #root {
 }
 
 /* Now, let's apply it on an element */
-* {
+body {
   font-family: "system-medium";
 }
 
 a {
   font-family: "system-light";
 }
-
-.ant-layout-sider * {
-  // font-family:  "system-light";
-  font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
-  text-shadow: @text-shadow;
-}
-
 
 // ATOMS: BASIC ELEMENTS
 
@@ -84,7 +77,7 @@ h1 {
 
 h2, h3 {
   font-weight: 200;
-  font-family: "system-light";
+  font-family: 'system-light';
   color: @dr-darker-grey;
 }
 
@@ -95,14 +88,22 @@ h2, h3 {
 
 .logo {
   width: 200px;
-  height: 220px;
+  height: 120px;
 }
 
 
 // Layout - Nav
 
-.ant-layout-sider .ant-menu-inline .ant-menu-item {
-  font-size: 18px;
+.ant-layout-sider {
+  .ant-menu-item-group-title {
+    font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
+    text-shadow: @text-shadow;
+  }
+
+  .ant-menu-item {
+    font-family: 'system-light';
+    font-weight: 300;
+  }
 }
 
 // Components
@@ -233,7 +234,7 @@ h2, h3 {
 
 // SELECT
 
-.bee-container, .ant-dropdown-menu, .ant-select-dropdown, .ant-cascader-menus {
+.bee-container, .ant-menu.ant-menu-sub.ant-menu-vertical, .ant-dropdown-menu, .ant-select-dropdown, .ant-cascader-menus {
   border: 1px solid @dr-grey;
   box-shadow: none;
   border-radius: 4px;
@@ -242,9 +243,12 @@ h2, h3 {
 .ant-popover-inner {
   box-shadow: 0 0 0 1px @dr-grey;
 }
-.ant-popover-placement-bottomRight > .ant-popover-content > .ant-popover-arrow {
-  border-top: 1px solid @dr-grey;
-  border-left: 1px solid @dr-grey;
+
+.ant-popover-placement-bottomRight, .ant-popover-placement-bottom {
+  & > .ant-popover-content > .ant-popover-arrow {
+    border-top: 1px solid @dr-grey;
+    border-left: 1px solid @dr-grey;
+  }
 }
 
 .ant-dropdown-menu-item,

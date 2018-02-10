@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Layout, Badge, Icon, Popover, Tabs, Spin, Menu, Dropdown, Avatar } from 'antd';
-import Notifications from './Notifications';
+
 // import { NavLink } from 'react-router-dom'
 const { Header } = Layout;
 const { TabPane } = Tabs;
@@ -16,12 +16,14 @@ const headerStyle = {
 
 const profilePartsStyle = {
   display: 'flex',
-  flexBasis: 275,
+  flexBasis: '200px',
   justifyContent: 'center',
-  borderBottom: '1px solid #F0F0F0'
+  borderBottom: '1px solid #F0F0F0',
+  fontFamily: 'system-light',
+  cursor: 'pointer'
 }
 
-const avatarSource = "https://dyn.web.whatsapp.com/pp?e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F19949478_315038825590460_3375469816457461760_n.jpg%3Foe%3D5A8075CB%26oh%3D8ea919e89bc293aa427f05eb12ca28c4&t=l&u=46722257774%40c.us&i=1500588391";
+const avatarSource = "https://raw.githubusercontent.com/gustavlrsn/artist-faces/master/plath.png";
 
 export default class BeeHeader extends Component {
 
@@ -45,36 +47,10 @@ export default class BeeHeader extends Component {
           {this.props.children}
         </div>
         <div style={profilePartsStyle}>
-          <Notifications
-            count={4}
-            onItemClick={(item, tabProps) => {
-              console.log(item, tabProps); // eslint-disable-line
-            }}
-            popupAlign={{ offset: [20, -16] }}
-          >
-            <Notifications.Tab
-              list={[]}
-              title="Messages"
-              emptyText="mamamam"
-              emptyImage="https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg"
-            />
-            <Notifications.Tab
-              list={[]}
-              title="Errors"
-              emptyText="erorororo"
-              emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
-            />
-            <Notifications.Tab
-              list={[]}
-              title="Alerts"
-              emptyText="Shalal"
-              emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
-            />
-          </Notifications>
-          <Dropdown overlay={menu}>
+          <Dropdown overlay={menu} trigger="click">
             <span>
-              <Avatar shape="square" icon="user" size="large" src={avatarSource} />
-              <span>Emin Durak</span>
+              <Avatar icon="user" size="large" src={avatarSource} />
+              <span> Sylvia Plath</span>
             </span>
           </Dropdown>
         </div>

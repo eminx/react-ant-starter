@@ -23,7 +23,7 @@ export const renderRoutes = () => (
         <Route exact path="/styles" component={Styles} />
         <Route exact path="/components" component={Components} />
         <Route exact path="/login" component={LoginManager} />
-        <Route path="*" component={LoginManager} />
+        <Route path="*" component={Components} />
       </Switch>
     </BeeLayout>
   </Router>

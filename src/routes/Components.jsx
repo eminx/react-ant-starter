@@ -91,87 +91,77 @@ export default class Components extends Component {
 
     return (
       <div>
-        <Tabs type="card" size="large" >
-          <TabPane tab="Atoms" key="1">
-            <section className={'editCard'} style={{paddingBottom: 180}}>
-              <h2>Dropdown</h2>
-              <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
-                <a className="ant-dropdown-link" href="#">
-                  Cascading menu <Icon type="down" />
-                </a>
-              </Dropdown>
+        <section className={'editCard'} style={{paddingBottom: 180}}>
+          <h2>Dropdown</h2>
+          <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
+            <a className="ant-dropdown-link" href="#">
+              Cascading menu <Icon type="down" />
+            </a>
+          </Dropdown>
 
-            </section>
+        </section>
 
-            <Divider />
+        <Divider />
 
-            <section className={'editCard'} >
-              <h2>Inputs</h2>
-              <Input style={inputStyle} size="large" placeholder="large size" />
-              <Input style={inputStyle} placeholder="default size" />
-              <Input style={inputStyle} size="small" placeholder="small size" />
-            </section>
+        <section className={'editCard'} >
+          <h2>Inputs</h2>
+          <Input style={inputStyle} size="large" placeholder="large size" />
+          <Input style={inputStyle} placeholder="default size" />
+          <Input style={inputStyle} size="small" placeholder="small size" />
+        </section>
 
-            <Divider />
+        <Divider />
 
-            <section className={'editCard'} >
-              <h2>Radio</h2>
-                <RadioGroup style={{paddingTop: '1em'}} onChange={this.onRadioChange} value={this.state.radioValue}>
-                  <Radio value={1}>A</Radio>
-                  <Radio value={2}>B</Radio>
-                  <Radio value={3}>C</Radio>
-                  <Radio value={4}>D</Radio>
-                </RadioGroup>
-            </section>
+        <section className={'editCard'} >
+          <h2>Radio</h2>
+            <RadioGroup style={{paddingTop: '1em'}} onChange={this.onRadioChange} value={this.state.radioValue}>
+              <Radio value={1}>A</Radio>
+              <Radio value={2}>B</Radio>
+              <Radio value={3}>C</Radio>
+              <Radio value={4}>D</Radio>
+            </RadioGroup>
+        </section>
 
-            <Divider />
+        <Divider />
 
-            <section className={'editCard'} >
-              <h2>Checkbox</h2>
-              <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
-                <br /><br />
-                <CheckboxGroup options={checkboxOptions} defaultValue={['Pear']} />
-                <br /><br />
-              <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['Apple']} />
-            </section>
+        <section className={'editCard'} >
+          <h2>Checkbox</h2>
+          <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
+            <br /><br />
+            <CheckboxGroup options={checkboxOptions} defaultValue={['Pear']} />
+            <br /><br />
+          <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['Apple']} />
+        </section>
 
-            <Divider />
+        <Divider />
 
 
-            <section className={'editCard'} >
-              <h2>Switch</h2>
-              <Switch defaultChecked />
-            </section>
+        <section className={'editCard'} >
+          <h2>Switch</h2>
+          <Switch defaultChecked />
+        </section>
 
-            <Divider />
+        <Divider />
 
-            <section className={'editCard'} style={{minHeight: 200}} >
-              <h2>AutoComplete</h2>
-              <AutoComplete
-                dataSource={this.state.autoCompleteDataSource}
-                onSearch={this.handleSearch}
-                placeholder="input here"
-              />
-            </section>
+        <section className={'editCard'} style={{minHeight: 200}} >
+          <h2>AutoComplete</h2>
+          <AutoComplete
+            dataSource={this.state.autoCompleteDataSource}
+            onSearch={this.handleSearch}
+            placeholder="input here"
+          />
+        </section>
 
-            <Divider />
+        <Divider />
 
-            <section className={'editCard'} style={{minHeight: 400}} >
-              <h2>Cascader (Hierarchical Dropdown)</h2>
-              <Cascader
-                style={{width: '100%'}}
-                options={cascaderOptions}
-                changeOnSelect
-              />
-            </section>
-
-
-
-          </TabPane>
-
-          <TabPane tab="Molecules" key="2">
-          </TabPane>
-        </Tabs>
+        <section className={'editCard'} style={{minHeight: 400}} >
+          <h2>Cascader (Hierarchical Dropdown)</h2>
+          <Cascader
+            style={{width: '100%'}}
+            options={cascaderOptions}
+            changeOnSelect
+          />
+        </section>
 
       </div>
     );

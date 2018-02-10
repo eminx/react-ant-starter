@@ -41,14 +41,14 @@ export default class Notifications extends PureComponent {
       const title = child.props.list && child.props.list.length > 0
         ? `${child.props.title} (${child.props.list.length})` : child.props.title;
       return (
-        <TabPane tab={title} key={child.props.title}>
+        <TabPane tab={title} key={child.props.title}  >
           No messages
         </TabPane>
       );
     });
     return (
       <Spin spinning={loading} delay={0}>
-        <Tabs onChange={this.onTabChange}>
+        <Tabs onChange={this.onTabChange} type="card" size="small">
           {panes}
         </Tabs>
       </Spin>
@@ -59,7 +59,7 @@ export default class Notifications extends PureComponent {
 
     const notificationBox = this.getNotificationBox();
     const trigger = (
-      <div style={{padding: '0 20px', cursor: 'pointer'}}>
+      <div style={{display: 'flex', justifyContent: 'center', cursor: 'pointer', padding: 20}}>
         <Badge count={count} >
           <Icon type="bell" style={{fontSize: '1.5em'}} />
         </Badge>
@@ -74,9 +74,10 @@ export default class Notifications extends PureComponent {
     }
     return (
       <Popover
-        placement="bottomRight"
+        placement="bottom"
         content={notificationBox}
         arrowPointAtCenter
+        trigger="click"
         popupAlign={popupAlign}
         onVisibleChange={onPopupVisibleChange}
         {...popoverProps}
