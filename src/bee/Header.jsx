@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Layout, Badge, Icon, Popover, Tabs, Spin, Menu, Dropdown, Avatar } from 'antd';
 import Notifications from './Notifications';
 // import { NavLink } from 'react-router-dom'
@@ -15,10 +16,12 @@ const headerStyle = {
 
 const profilePartsStyle = {
   display: 'flex',
-  flexBasis: 200,
-  justifyContent: 'space-around',
+  flexBasis: 275,
+  justifyContent: 'center',
   borderBottom: '1px solid #F0F0F0'
 }
+
+const avatarSource = "https://dyn.web.whatsapp.com/pp?e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F19949478_315038825590460_3375469816457461760_n.jpg%3Foe%3D5A8075CB%26oh%3D8ea919e89bc293aa427f05eb12ca28c4&t=l&u=46722257774%40c.us&i=1500588391";
 
 export default class BeeHeader extends Component {
 
@@ -28,7 +31,11 @@ export default class BeeHeader extends Component {
         <Menu.Item><Icon type="user" /> Profile</Menu.Item>
         <Menu.Item><Icon type="setting" /> Settings</Menu.Item>
         <Menu.Divider />
-        <Menu.Item key="logout"><Icon type="logout" /> Logout</Menu.Item>
+        <Menu.Item key="logout">
+          <NavLink to="/login">
+            <Icon type="logout" /> Logout
+          </NavLink>
+        </Menu.Item>
       </Menu>
     );
 
@@ -66,8 +73,8 @@ export default class BeeHeader extends Component {
           </Notifications>
           <Dropdown overlay={menu}>
             <span>
-              <Avatar size="large" src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png" />
-              <span> Emin Durak</span>
+              <Avatar shape="square" icon="user" size="large" src={avatarSource} />
+              <span>Emin Durak</span>
             </span>
           </Dropdown>
         </div>
