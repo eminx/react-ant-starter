@@ -9,7 +9,7 @@ import styles from './index.less';
 import './Login.less';
 
 const iconStyle = {
-  fontSize: '4em',
+  fontSize: '3em',
   backgroundColor: '#fffff6',
   color: '#6F6E6E',
   borderRadius: '50%',
@@ -104,6 +104,7 @@ class Login extends Component {
         <div className="loginWrapper">
           <div className="displayCard" style={{display: 'flex', justifyContent: 'space-between'}}>
             <div className="loginManager bee-container editCard" style={{flexBasis: '62%'}}>
+              <h2 style={{textAlign: 'center', marginBottom: 20}}>Login</h2>
               <Form onSubmit={this.handleSubmit}>
                 {
                   tabs.length ? (
@@ -123,10 +124,14 @@ class Login extends Component {
               </Form>
             </div>
             <div className="displayCard-info" style={{flexBasis: '37%'}}>
-              <h1 style={{textAlign: 'center', margin: 20}}>Single sign-on to all our services, <br />with ease</h1>
-              <div className="flex-horizontal" style={{justifyContent: 'space-evenly'}}>
-                <Icon type="check" style={iconStyle} />
+              <h1 style={{textAlign: 'center', marginTop: 20}}>
+                <b>Operation-tools</b> <br />
+                for your<br />
+                <b>21st century business</b>
+              </h1>
+              <div className="flex-horizontal" style={{justifyContent: 'space-evenly', marginTop: 50}}>
                 <Icon type="lock" style={iconStyle} />
+                <Icon type="check" style={iconStyle} />
               </div>
             </div>
           </div>

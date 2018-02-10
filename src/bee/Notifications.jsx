@@ -42,7 +42,7 @@ export default class Notifications extends PureComponent {
         ? `${child.props.title} (${child.props.list.length})` : child.props.title;
       return (
         <TabPane tab={title} key={child.props.title}>
-          Eminem
+          No messages
         </TabPane>
       );
     });

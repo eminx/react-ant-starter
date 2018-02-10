@@ -16,7 +16,7 @@
 @layout-body-background: @main-background;
 
 @border-radius: 2px;
-@text-shadow: 0 0 1px #fff;
+@text-shadow: 0 0 2px #fff;
 
 @basic-text-color: #313131;
 @second-text-color: #6F6F6F;
@@ -76,7 +76,7 @@ a {
 
 h1 {
   // color: @primary-color;
-  color: @dr-dark-grey;
+  color: @dr-darker-grey;
   font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
   font-weight: 200;
   text-shadow: @text-shadow;
@@ -145,8 +145,15 @@ h2, h3 {
 
 .ant-menu-item:hover,
 .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
-.ant-menu-submenu-title:hover {
-  color: @second-text-color;
+
+.ant-menu-submenu {
+  &-title:hover {
+    color: @second-text-color;
+  }
+
+  & > .ant-menu {
+    background-color: @dr-lighter-grey;
+  }
 }
 
 .ant-menu-item-active, .ant-menu-submenu-active,

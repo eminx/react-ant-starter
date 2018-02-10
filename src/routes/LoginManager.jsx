@@ -57,11 +57,13 @@ export default class LoginManager extends React.Component {
         </Tab>
         <div style={{marginTop: 10}}>
           <Checkbox checked={this.state.autoLogin} onChange={this.changeAutoLogin}>Save credentials</Checkbox>
-          <a style={{ float: 'right' }} href="">Forgot your password?</a>
         </div>
         <div style={{marginTop: 25, display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
           <a href="">Register</a>
           <Submit style={{marginBottom: 0}}>Login</Submit>
+        </div>
+        <div style={{marginTop: 10}}>
+          <a href="">Forgot your password?</a>
         </div>
       </Login>
     );
