@@ -47,7 +47,7 @@ export default class BeeLayout extends Component {
         <Sider
           style={{ background: '#F5F5F6' }}
           width={240}
-          breakpoint={'lg'}
+          breakpoint={'xl'}
           collapsible
           collapsed={this.state.collapsed}
           onCollapse={this.toggleSider}
@@ -63,19 +63,19 @@ export default class BeeLayout extends Component {
             <div style={{flexBasis: '75%'}}>
               {this.props.children}
             </div>
-            <div style={{position:'fixed', right: 30, flexBasis: '200px', display: 'flex', flexDirection: 'column', paddingTop: 80}}>
+            <div style={{position:'fixed', right: 30, flexBasis: '200px', display: 'flex', flexDirection: 'column'}}>
 
               <AutoComplete
                 size="large"
                 style={{ width: '100%' }}
                 dataSource={[]}
-                placeholder="search here"
+                placeholder="search anything"
                 optionLabelProp="value"
               >
                 <Input suffix={<Icon type="search" className="certain-category-icon" />} />
               </AutoComplete>
 
-              <div style={{paddingTop: 60}}>
+              <div style={{paddingTop: 30}}>
                 {theNavigation}
               </div>
             </div>
