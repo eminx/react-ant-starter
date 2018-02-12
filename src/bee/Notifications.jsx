@@ -77,7 +77,7 @@ export default class Notifications extends PureComponent {
         placement="bottom"
         content={notificationBox}
         arrowPointAtCenter
-        trigger="click"
+        trigger={["click"]}
         popupAlign={popupAlign}
         onVisibleChange={onPopupVisibleChange}
         {...popoverProps}

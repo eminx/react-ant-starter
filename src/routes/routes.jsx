@@ -15,7 +15,7 @@ const browserHistory = createBrowserHistory();
 
 export const renderRoutes = () => (
   <Router history={browserHistory}>
-  	<BeeLayout>
+  	<BeeLayout router={browserHistory}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/principles" component={Principles} />

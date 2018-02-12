@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Layout, Badge, Icon, Popover, Tabs, Spin, Menu, Dropdown, Avatar } from 'antd';
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // import { NavLink } from 'react-router-dom'
 const { Header } = Layout;
 const { TabPane } = Tabs;
@@ -28,6 +32,15 @@ const avatarSource = "https://raw.githubusercontent.com/gustavlrsn/artist-faces/
 export default class BeeHeader extends Component {
 
   render() {
+
+    const children = this.props.children;
+    let title;
+    if (children === "/") {
+      title = "Dashboard";
+    } else {
+      title = capitalizeFirstLetter(children.replace(/\//g, ''));
+    }
+
     const menu = (
       <Menu selectedKeys={[]} >
         <Menu.Item><Icon type="user" /> Profile</Menu.Item>
@@ -44,15 +57,21 @@ export default class BeeHeader extends Component {
     return (
       <Header style={headerStyle} >
         <div className="titleBack">
-          {this.props.children}
+          <h1 className="page-title">{title}</h1>
         </div>
-        <div style={profilePartsStyle}>
-          <Dropdown overlay={menu} trigger="click">
-            <span>
-              <Avatar icon="user" size="large" src={avatarSource} />
-              <span> Sylvia Plath</span>
-            </span>
-          </Dropdown>
+
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div style={{paddingRight: 50, paddingTop: 5}}>
+            <Icon type="appstore-o" style={{fontSize: 24, fontWeight: 300}} />
+          </div>
+          <div style={profilePartsStyle}>
+            <Dropdown overlay={menu} trigger="click">
+              <span>
+                <Avatar icon="user" size="large" src={avatarSource} />
+                <span> Sylvia Plath</span>
+              </span>
+            </Dropdown>
+          </div>
         </div>
       </Header>
     );

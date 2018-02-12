@@ -91,7 +91,7 @@ export default class Components extends Component {
 
     return (
       <div>
-        <section className={'editCard'} style={{paddingBottom: 180}}>
+        <section className={'displayCard'} style={{paddingBottom: 180}}>
           <h2>Dropdown</h2>
           <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
             <a className="ant-dropdown-link" href="#">
@@ -103,7 +103,7 @@ export default class Components extends Component {
 
         <Divider />
 
-        <section className={'editCard'} >
+        <section className={'displayCard'} >
           <h2>Inputs</h2>
           <Input style={inputStyle} size="large" placeholder="large size" />
           <Input style={inputStyle} placeholder="default size" />
@@ -112,7 +112,7 @@ export default class Components extends Component {
 
         <Divider />
 
-        <section className={'editCard'} >
+        <section className={'displayCard'} >
           <h2>Radio</h2>
             <RadioGroup style={{paddingTop: '1em'}} onChange={this.onRadioChange} value={this.state.radioValue}>
               <Radio value={1}>A</Radio>
@@ -124,7 +124,7 @@ export default class Components extends Component {
 
         <Divider />
 
-        <section className={'editCard'} >
+        <section className={'displayCard'} >
           <h2>Checkbox</h2>
           <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
             <br /><br />
@@ -136,14 +136,14 @@ export default class Components extends Component {
         <Divider />
 
 
-        <section className={'editCard'} >
+        <section className={'displayCard'} >
           <h2>Switch</h2>
           <Switch defaultChecked />
         </section>
 
         <Divider />
 
-        <section className={'editCard'} style={{minHeight: 200}} >
+        <section className={'displayCard'} style={{minHeight: 200}} >
           <h2>AutoComplete</h2>
           <AutoComplete
             dataSource={this.state.autoCompleteDataSource}
@@ -154,7 +154,7 @@ export default class Components extends Component {
 
         <Divider />
 
-        <section className={'editCard'} style={{minHeight: 400}} >
+        <section className={'displayCard'} style={{minHeight: 400}} >
           <h2>Cascader (Hierarchical Dropdown)</h2>
           <Cascader
             style={{width: '100%'}}
