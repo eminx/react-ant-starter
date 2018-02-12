@@ -36,7 +36,8 @@
 html, body, #root {
   height: 100%;
   font-weight: light;
-  background-color: @dr-dark-grey;
+  // background-color: @dr-light-grey;
+  background-color: @layout-body-background;
 }
 
 
@@ -113,6 +114,10 @@ h2, h3 {
   background-position: center;
 }
 
+.ant-layout-content {
+  // background-color: @dr-light-grey;
+}
+
 
 // Layout - Nav
 
@@ -135,7 +140,7 @@ h2, h3 {
   }
 
   .ant-menu > .ant-menu-item-divider {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -203,12 +208,12 @@ h2, h3 {
 
 .ant-layout-sider-trigger {
   color: @dr-dark-grey;
-  background-color: @dr-light-grey;
+  background-color: @dr-lighter-grey;
 }
 
 
-// List
 
+// List
 
 .ant-list {
   color: @basic-text-color;
@@ -346,4 +351,36 @@ h2, h3 {
   border-radius: @border-radius;
   width: 100%;
   font-weight: 400;
+}
+
+.halfWidget {
+  width: 50%;
+}
+
+.codeShower-container {
+  width: 50%;
+  height: 100%;
+}
+
+.codeShower {
+  margin: 50px 40%;
+  &-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: @dr-dark-grey;
+    // opacity: 0;
+    transition: opacity .1s ease-in-out;
+  }
+
+  &:hover .codeShower-icon {
+    opacity: 1;
+  }
+
+  &-codebox {
+    // background-color: @dr-darker-grey;
+    // color: @dr-lighter-grey;
+    // font-family: 'monospace';
+    max-width: 300px;
+  }
 }

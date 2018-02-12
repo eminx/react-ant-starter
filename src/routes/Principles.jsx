@@ -28,7 +28,7 @@ export default class Principles extends Component {
               <p>Be transparent and direct about what you need and your intent from the user for a particular, given task.</p>
             </List.Item>
             <List.Item>
-              <h2>Respect complexity</h2>
+              <h2>Sophisticated</h2>
               <p>Don’t undermine the complexity of any given task; rather emphasize its sophistication and don't complicate more</p>
             </List.Item>
             <List.Item>

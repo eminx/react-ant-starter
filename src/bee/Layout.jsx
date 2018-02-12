@@ -55,7 +55,7 @@ export default class BeeLayout extends Component {
 
   render() {
     return (
-      <Layout style={{height: '100%', background: '#F5F5F6'}}>
+      <Layout style={{height: '100%'}}>
         <Sider
           style={{ background: '#F5F5F6' }}
           width={240}
@@ -65,18 +65,17 @@ export default class BeeLayout extends Component {
           onCollapse={this.toggleSider}
         >
           <div className="logo logoDR" />
-            <h1>Logo</h1>
           <BeeNav />
         </Sider>
-        <Layout style={{ background: '#FEFEFF' }}>
+        <Layout style={{ background: '#F0F0F0' }}>
           <BeeHeader>
             {this.props.router.location.pathname}
           </BeeHeader>
-          <Content style={{ display: 'flex', margin: 0, padding: '2em', background: '#FEFEFF', height: '100%', marginBottom: 100 }}>
+          <Content style={{ display: 'flex', margin: 0, padding: '2em', height: '100%', marginBottom: 100 }}>
             <div style={{flexBasis: '75%'}}>
               {this.props.children}
             </div>
-            <div style={{position:'fixed', right: 30, flexBasis: '200px', display: 'flex', flexDirection: 'column'}}>
+            <div style={{position:'fixed', right: 30, maxWidth: 240, flexBasis: '200px', display: 'flex', flexDirection: 'column'}}>
 
               <AutoComplete
                 size="large"
@@ -93,9 +92,9 @@ export default class BeeLayout extends Component {
               </div>
 
               <div style={flexiAlert}>
-                <Alert message="Success Tips" type="success" showIcon />
-                <Alert message="Informational Notes" type="info" showIcon />
-                <Alert message="Warning" type="warning" showIcon />
+                <Alert message="Deployment succesfulz" type="success" showIcon />
+                <Alert message="New member added" type="info" showIcon />
+                <Alert message="Shortage of space" type="warning" showIcon />
               </div>
 
               <div style={flexiProgress}>

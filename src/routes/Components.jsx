@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, Menu, Dropdown, Icon, Divider, Input, Radio, Switch, Checkbox, AutoComplete, Cascader } from 'antd';
+import { Tabs, Menu, Dropdown, Icon, Divider, Input, Radio, Switch, Checkbox, AutoComplete, Cascader, Popover, Button } from 'antd';
 const CheckboxGroup = Checkbox.Group;
 const RadioGroup = Radio.Group;
 const SubMenu = Menu.SubMenu;
@@ -58,6 +58,14 @@ const optionsWithDisabled = [
   { label: 'Orange', value: 'Orange', disabled: false },
 ];
 
+const dropdownCode = `
+  <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}> \n
+    <a className="ant-dropdown-link" href="#"> \n
+      Cascading menu <Icon type="down" /> \n
+    </a> \n
+  </Dropdown>
+`;
+
 
 export default class Components extends Component {
 
@@ -89,80 +97,109 @@ export default class Components extends Component {
       margin: '1em'
     }
 
+    const text = <span>Title</span>;
+    const content = (
+      <div>
+        <p>Content</p>
+        <p>Content</p>
+      </div>
+    );
+
     return (
       <div>
-        <section className={'displayCard'} style={{paddingBottom: 180}}>
-          <h2>Dropdown</h2>
-          <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
-            <a className="ant-dropdown-link" href="#">
-              Cascading menu <Icon type="down" />
-            </a>
-          </Dropdown>
+        <div className="flex-horizontal align-center">
+          <section className="displayCard halfWidget" style={{paddingBottom: 180}}>
+            <h2>Dropdown</h2>
+            <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
+              <a className="ant-dropdown-link" href="#">
+                Cascading menu <Icon type="down" />
+              </a>
+            </Dropdown>
+          </section>
 
-        </section>
+          <div className="codeShower-container" >
+            <div className="codeShower">
+              <Popover arrowPointAtCenter overlayStyle={{fontFamily: 'monospace', maxWidth: 300}} placement="bottom" title="Code snippet" content={dropdownCode} trigger="click">
+                <div className="codeShower-icon">
+                  <Icon type="code-o" style={{fontSize: 48, margin: 16, color: '#fff'}} />
+                </div>
+              </Popover>
+            </div>
+          </div>
+        </div>
 
         <Divider />
 
-        <section className={'displayCard'} >
-          <h2>Inputs</h2>
-          <Input style={inputStyle} size="large" placeholder="large size" />
-          <Input style={inputStyle} placeholder="default size" />
-          <Input style={inputStyle} size="small" placeholder="small size" />
-        </section>
+        <div className="flex-horizontal align-center">
+          <section className="displayCard halfWidget" >
+            <h2>Inputs</h2>
+            <Input style={inputStyle} size="large" placeholder="large size" />
+            <Input style={inputStyle} placeholder="default size" />
+            <Input style={inputStyle} size="small" placeholder="small size" />
+          </section>
+        </div>
 
         <Divider />
 
-        <section className={'displayCard'} >
-          <h2>Radio</h2>
+        <div className="flex-horizontal align-center">
+          <section className="displayCard halfWidget" >
+            <h2>Radio</h2>
             <RadioGroup style={{paddingTop: '1em'}} onChange={this.onRadioChange} value={this.state.radioValue}>
               <Radio value={1}>A</Radio>
               <Radio value={2}>B</Radio>
               <Radio value={3}>C</Radio>
               <Radio value={4}>D</Radio>
             </RadioGroup>
-        </section>
+          </section>
+        </div>
 
         <Divider />
 
-        <section className={'displayCard'} >
-          <h2>Checkbox</h2>
-          <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
-            <br /><br />
-            <CheckboxGroup options={checkboxOptions} defaultValue={['Pear']} />
-            <br /><br />
-          <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['Apple']} />
-        </section>
+        <div className="flex-horizontal align-center">
+          <section className="displayCard halfWidget" >
+            <h2>Checkbox</h2>
+            <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
+              <br /><br />
+              <CheckboxGroup options={checkboxOptions} defaultValue={['Pear']} />
+              <br /><br />
+            <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['Apple']} />
+          </section>
+        </div>
 
         <Divider />
 
-
-        <section className={'displayCard'} >
-          <h2>Switch</h2>
-          <Switch defaultChecked />
-        </section>
-
-        <Divider />
-
-        <section className={'displayCard'} style={{minHeight: 200}} >
-          <h2>AutoComplete</h2>
-          <AutoComplete
-            dataSource={this.state.autoCompleteDataSource}
-            onSearch={this.handleSearch}
-            placeholder="input here"
-          />
-        </section>
+        <div className="flex-horizontal align-center">
+          <section className="displayCard halfWidget" >
+            <h2>Switch</h2>
+            <Switch defaultChecked />
+          </section>
+        </div>
 
         <Divider />
 
-        <section className={'displayCard'} style={{minHeight: 400}} >
+        <div className="flex-horizontal align-center">
+          <section className="displayCard halfWidget" style={{minHeight: 200}} >
+            <h2>AutoComplete</h2>
+            <AutoComplete
+              dataSource={this.state.autoCompleteDataSource}
+              onSearch={this.handleSearch}
+              placeholder="input here"
+            />
+          </section>
+        </div>
+
+        <Divider />
+
+        <div className="flex-horizontal align-center">
+          <section className="displayCard halfWidget" style={{minHeight: 400}} >
           <h2>Cascader (Hierarchical Dropdown)</h2>
-          <Cascader
-            style={{width: '100%'}}
-            options={cascaderOptions}
-            changeOnSelect
-          />
-        </section>
-
+            <Cascader
+              style={{width: '100%'}}
+              options={cascaderOptions}
+              changeOnSelect
+            />
+          </section>
+        </div>
       </div>
     );
   }
