@@ -21,7 +21,11 @@ export const renderRoutes = () => (
         <Route exact path="/principles" component={Principles} />
         <Route exact path="/guidelines" component={Guidelines} />
         <Route exact path="/styles" component={Styles} />
-        <Route exact path="/components" component={Components} />
+        <Route exact path="/components-analyze" component={Components} />
+        <Route exact path="/components-configure" component={Components} />
+        <Route exact path="/components-indicate" component={Components} />
+        <Route exact path="/components-monitor" component={Components} />
+        <Route exact path="/components-navigate" component={Components} />
         <Route exact path="/login" component={LoginManager} />
         <Route path="*" component={Components} />
       </Switch>

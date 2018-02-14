@@ -65,7 +65,7 @@ export default class BeeHeader extends Component {
             <Icon type="appstore-o" style={{fontSize: 24, fontWeight: 300}} />
           </div>
           <div style={profilePartsStyle}>
-            <Dropdown overlay={menu} trigger="click">
+            <Dropdown overlay={menu} trigger={["click"]}>
               <span>
                 <Avatar icon="user" size="large" src={avatarSource} />
                 <span> Sylvia Plath</span>
