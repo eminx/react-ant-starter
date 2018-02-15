@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Configure from './Configure/Configure';
+import Configuration from './Configuration/Configuration';
 
 export default class ComponentsIndex extends Component {
 
@@ -41,7 +41,7 @@ export default class ComponentsIndex extends Component {
 
     return (
       <div>
-        <Configure />
+        <Configuration />
       </div>
     );
   }

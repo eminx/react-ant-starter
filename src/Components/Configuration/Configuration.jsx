@@ -81,7 +81,7 @@ const formDesign =
   <h3>Size</h3>
   <p>
     For most use-cases, use the default size. For login kind of important operations
-    where the user is required to concentrate only on one thing, which is a form,
+    where the user is required to concentrate only on one thing at a time, which is a form,
     then use the large size. For detailed configuration operations that have form items
     appear under a popup or so, use the small size.
   </p>
@@ -165,11 +165,15 @@ export default class Configure extends Component {
 
     const { loading, success } = this.state;
 
+    const self = this;
 
     return (
       <div style={{marginBottom: 200}}>
         <h2>Buttons</h2>
-        <Row type="flex" gutter={16}>
+        <Row type="flex" gutter={32}>
+          <Col span={12} >
+            <CodeDesignPreview design={buttonDesign} code={buttonCode} />
+          </Col>
           <Col span={12}>
             <h3>Submit (for forms)</h3>
             <Button
@@ -197,17 +201,27 @@ export default class Configure extends Component {
             <Button size="large" type="primary" icon="check-circle">Buy</Button>
             <Divider />
           </Col>
-          <Col span={12}>
-            <CodeDesignPreview design={buttonDesign} code={buttonCode} />
-          </Col>
         </Row>
+
         <Divider />
-        <h2>Form inputs</h2>
-        <Row type="flex" gutter={16}>
+
+        <Affix offsetTop={40}>
+          <h2>Form inputs</h2>
+        </Affix>
+        <Row type="flex" gutter={32}>
+          <Col span={12}>
+            <Affix offsetTop={85}>
+              <CodeDesignPreview
+                design={formDesign}
+                code={dropdownCode}
+              />
+            </Affix>
+          </Col>
+
           <Col span={12}>
             <h3>Dropdown</h3>
             <Dropdown overlay={dropdownMenu} style={{paddingTop: '1em'}}>
-              <a className="ant-dropdown-link" href="#">
+              <a className="ant-dropdown-link">
                 Cascading menu <Icon type="down" />
               </a>
             </Dropdown>
@@ -261,14 +275,6 @@ export default class Configure extends Component {
             />
           </Col>
 
-          <Col span={12}>
-            <Affix offsetTop={120}>
-              <CodeDesignPreview
-                design={formDesign}
-                code={dropdownCode}
-              />
-            </Affix>
-          </Col>
 
         </Row>
 

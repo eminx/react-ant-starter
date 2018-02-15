@@ -22,7 +22,7 @@
 @import "~antd/dist/antd.less";
 @import "./flex.less";
 @import "./Reusables/CodeDesignPreview.less";
-@import "./Components/Configure/Configure.less";
+@import "./Components/Configuration/Configuration.less";
 
 @primary-color: #9254de; // ant purple
 @main-background: #FEFEFF;
@@ -42,10 +42,11 @@
 
 //
 html, body, #root {
-  height: 100%;
-  font-weight: light;
-  // background-color: @dr-light-grey;
   background-color: @layout-body-background;
+}
+
+p {
+  color: @basic-text-color;
 }
 
 
@@ -81,6 +82,8 @@ body {
 }
 
 a {
+  font-family: system-light;
+
   &.ant-dropdown-link, &.ant-dropdown-trigger {
     color: @blue;
     // font-family: "system-medium";
@@ -110,8 +113,13 @@ h1 {
   }
 }
 
-h2, h3 {
-  font-weight: 200;
+h2 {
+  font-weight: 400;
+  font-family: 'system-medium';
+}
+
+h3 {
+  font-weight: 300;
   font-family: 'system-light';
   color: @dr-darker-grey;
 }
@@ -139,6 +147,11 @@ h2, h3 {
 // Layout - Nav
 
 .ant-layout-sider {
+  .ant-layout-sider-children {
+    position: fixed;
+    width: 100%;
+  }
+
   .ant-menu-item-group-title {
     font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
     text-shadow: @text-shadow;
