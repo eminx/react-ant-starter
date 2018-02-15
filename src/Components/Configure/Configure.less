@@ -1,0 +1,49 @@
+.ant-btn {
+  border: 1px solid @dr-grey;
+  color: @dr-dark-grey;
+
+  &:hover, &:focus {
+    background-color: @paper-background;
+    border-color: @dr-dark-grey;
+    color: @dr-dark-grey;
+  }
+
+  &:active {
+    color: @dr-darker-grey;
+    border-color: @dr-darker-grey;
+    box-shadow: inset 0 0 0 1px @dr-darker-grey;
+  }
+
+  &.ant-btn-danger {
+    color: #ff4d4f;
+    &:hover, &:focus {
+      color: @main-background;
+      background-color: #ff4d4f;
+      border-color: #ff4d4f;
+    }
+  }
+
+  &.ant-btn-primary {
+    background-color: @paper-background;
+    color: @green;
+    border-color: @green;
+
+    &:hover {
+      background-color: @light-green;
+      box-shadow: inset 0 0 0 1px @light-green;
+    }
+
+    &:active, &:focus {
+      background-color: @light-green;
+      box-shadow: inset 0 0 0 2px @light-green;
+    }
+  }
+
+}
+
+.ant-popover-buttons {
+  .ant-btn.ant-btn-primary {
+    color: @paper-background;
+    background-color: @dr-dark-grey;
+  }
+}

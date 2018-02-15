@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Layout, Badge, Icon, Popover, Tabs, Spin, Menu, Dropdown, Avatar } from 'antd';
+import Notifications from './Notifications';
 
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // import { NavLink } from 'react-router-dom'
@@ -26,6 +27,28 @@ const profilePartsStyle = {
   fontFamily: 'system-light',
   cursor: 'pointer'
 }
+
+const notifications =
+  <Notifications
+    count={4}
+    onItemClick={(item, tabProps) => {
+      console.log(item, tabProps); // eslint-disable-line
+    }}
+    popupAlign={{ offset: [20, -16] }}
+  >
+    <Notifications.Tab
+      list={[]}
+      title="Logs"
+      emptyText="erorororo"
+      emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
+    />
+    <Notifications.Tab
+      list={[]}
+      title="Errors"
+      emptyText="Shalal"
+      emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
+    />
+  </Notifications>;
 
 const avatarSource = "https://raw.githubusercontent.com/gustavlrsn/artist-faces/master/plath.png";
 
@@ -61,6 +84,9 @@ export default class BeeHeader extends Component {
         </div>
 
         <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div style={{paddingRight: 30, paddingTop: 5}}>
+            {notifications}
+          </div>
           <div style={{paddingRight: 50, paddingTop: 5}}>
             <Icon type="appstore-o" style={{fontSize: 24, fontWeight: 300}} />
           </div>

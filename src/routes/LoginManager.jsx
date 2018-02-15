@@ -9,7 +9,6 @@ export default class LoginManager extends React.Component {
     notice: '',
     type: 'tab2',
     autoLogin: true,
-    isLoggedIn: false
   }
   onSubmit = (err, values) => {
     console.log('value collected ->', { ...values, autoLogin: this.state.autoLogin });
@@ -26,9 +25,6 @@ export default class LoginManager extends React.Component {
         }
       });
     }
-    this.setState({
-      isLoggedIn: true
-    })
   }
   onTabChange = (key) => {
     this.setState({
@@ -41,10 +37,6 @@ export default class LoginManager extends React.Component {
     });
   }
   render() {
-    if (this.state.isLoggedIn) {
-      return (this.props.children);
-    }
-
     return (
       <Login
         defaultActiveKey={this.state.type}

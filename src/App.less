@@ -5,6 +5,11 @@
 @dr-dark-grey: #6F6E6E;
 @dr-darker-grey: #575656;
 
+@green: #52C41A;
+@light-green: #E6FFDA;
+@blue: #1a4ec7;
+@light-blue: #4f7de8;
+
 @info-color             : #bae7ff;
 @success-color          : #d9f7be;
 @processing-color       : #ffffb8;
@@ -17,6 +22,7 @@
 @import "~antd/dist/antd.less";
 @import "./flex.less";
 @import "./Reusables/CodeDesignPreview.less";
+@import "./Components/Configure/Configure.less";
 
 @primary-color: #9254de; // ant purple
 @main-background: #FEFEFF;
@@ -75,9 +81,18 @@ body {
 }
 
 a {
-  font-family: "system-light";
-  &:hover {
-    text-decoration: underline;
+  &.ant-dropdown-link, &.ant-dropdown-trigger {
+    color: @blue;
+    // font-family: "system-medium";
+    &:hover, &:focus, &:active {
+      color: @light-blue;
+    }
+  }
+
+  &:not(.ant-dropdown-trigger) {
+    &, &:hover, &:focus {
+      border-bottom: 1px solid blue;
+    }
   }
 }
 
@@ -241,6 +256,33 @@ h2, h3 {
     box-shadow: inset 0 0 0 1px @dr-dark-grey;
   }
 }
+
+.ant-input-number {
+  box-shadow: none;
+  border: solid @dr-grey 1px;
+  background-color: transparent;
+  transition-duration: .1s;
+
+  &:hover {
+    border-color: @dr-dark-grey;
+  }
+
+  .ant-input-number-input {
+    box-shadow: none;
+    border: none;
+  }
+
+  &.ant-input-number-focused {
+    box-shadow: 0 0 0 1px @dr-dark-grey;
+    border-color: @dr-dark-grey;
+
+    .ant-input-number-input {
+      box-shadow: none;
+      border: none;
+    }
+  }
+}
+
 
 .ant-cascader-picker:focus .ant-cascader-input {
   border: solid @dr-dark-grey 1px;

@@ -3,30 +3,7 @@ import { Layout, Icon, Input, AutoComplete, Progress, Alert } from 'antd';
 import { NavLink } from 'react-router-dom';
 import BeeNav from './Nav';
 import BeeHeader from './Header';
-import Notifications from './Notifications';
 const { Header, Sider, Content } = Layout;
-
-const notifications =
-  <Notifications
-    count={4}
-    onItemClick={(item, tabProps) => {
-      console.log(item, tabProps); // eslint-disable-line
-    }}
-    popupAlign={{ offset: [20, -16] }}
-  >
-    <Notifications.Tab
-      list={[]}
-      title="Logs"
-      emptyText="erorororo"
-      emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
-    />
-    <Notifications.Tab
-      list={[]}
-      title="Errors"
-      emptyText="Shalal"
-      emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
-    />
-  </Notifications>;
 
 const flexi = {
   display: 'flex',
@@ -77,6 +54,7 @@ export default class BeeLayout extends Component {
             </div>
             <div style={{position:'fixed', right: 30, maxWidth: 240, flexBasis: '200px', display: 'flex', flexDirection: 'column'}}>
 
+              {/*
               <AutoComplete
                 size="large"
                 style={{ width: '100%' }}
@@ -85,11 +63,7 @@ export default class BeeLayout extends Component {
                 optionLabelProp="value"
               >
                 <Input suffix={<Icon type="search" className="certain-category-icon" />} />
-              </AutoComplete>
-
-              <div style={{paddingTop: 30}}>
-                {notifications}
-              </div>
+              </AutoComplete> */}
 
               <div style={flexiAlert}>
                 <Alert message="Deployment succesfulz" type="success" showIcon />

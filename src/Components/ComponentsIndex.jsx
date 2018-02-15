@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FormItems from './AddEditConfigure/FormItems';
+import Configure from './Configure/Configure';
 
 export default class ComponentsIndex extends Component {
 
@@ -41,7 +41,7 @@ export default class ComponentsIndex extends Component {
 
     return (
       <div>
-        <FormItems />
+        <Configure />
       </div>
     );
   }
