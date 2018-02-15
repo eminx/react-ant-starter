@@ -7,7 +7,6 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// import { NavLink } from 'react-router-dom'
 const { Header } = Layout;
 const { TabPane } = Tabs;
 
@@ -84,12 +83,18 @@ export default class BeeHeader extends Component {
         </div>
 
         <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div style={{paddingRight: 50, paddingTop: 5}}>
+            <Icon type="search" style={{fontSize: 24, fontWeight: 300}} />
+          </div>
+
+          <div style={{paddingRight: 30, paddingTop: 5}}>
+            <Icon type="appstore-o" style={{fontSize: 24, fontWeight: 300}} />
+          </div>
+
           <div style={{paddingRight: 30, paddingTop: 5}}>
             {notifications}
           </div>
-          <div style={{paddingRight: 50, paddingTop: 5}}>
-            <Icon type="appstore-o" style={{fontSize: 24, fontWeight: 300}} />
-          </div>
+
           <div style={profilePartsStyle}>
             <Dropdown overlay={menu} trigger={["click"]}>
               <span>

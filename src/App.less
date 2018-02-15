@@ -83,20 +83,34 @@ body {
 
 a {
   font-family: system-light;
+  margin-right: 4px;
+  margin-left: 4px;
 
-  &.ant-dropdown-link, &.ant-dropdown-trigger {
+  &, &:visited, &.ant-dropdown-link, &.ant-dropdown-trigger {
     color: @blue;
     // font-family: "system-medium";
-    &:hover, &:focus, &:active {
+    &, &:hover, &:focus, &:active {
+      text-decoration: none;
+    }
+
+    &:hover {
       color: @light-blue;
+    }
+
+    &:focus, &:active {
+      color: @blue;
     }
   }
 
   &:not(.ant-dropdown-trigger) {
     &, &:hover, &:focus {
-      border-bottom: 1px solid blue;
+      border-bottom: 1px solid @blue;
     }
   }
+}
+
+.ant-menu-item > a {
+  color: inherit;
 }
 
 // ATOMS: BASIC ELEMENTS
@@ -464,3 +478,13 @@ h3 {
 //
 //   }
 // }
+
+code, pre {
+  font-size: 12px;
+  line-height: 14px;
+  color: @basic-text-color;
+}
+
+pre {
+  display: inline;
+}
