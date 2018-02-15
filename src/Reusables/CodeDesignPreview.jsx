@@ -27,7 +27,7 @@ export default class CodeDesignPreview extends React.Component {
               highlightActiveLine={false}
               name="UNIQUE_ID_OF_DIV"
               setOptions={{ useWorker: false, showLineNumbers: false, highlightActiveLine: false }}
-            />,
+            />
           </TabPane>
         </Tabs>
       </div>

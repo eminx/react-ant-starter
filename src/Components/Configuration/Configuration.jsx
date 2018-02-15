@@ -165,12 +165,10 @@ export default class Configure extends Component {
 
     const { loading, success } = this.state;
 
-    const self = this;
-
     return (
       <div style={{marginBottom: 200}}>
         <h2>Buttons</h2>
-        <Row type="flex" gutter={32}>
+        <Row type="flex" gutter={24}>
           <Col span={12} >
             <CodeDesignPreview design={buttonDesign} code={buttonCode} />
           </Col>
@@ -208,9 +206,9 @@ export default class Configure extends Component {
         <Affix offsetTop={40}>
           <h2>Form inputs</h2>
         </Affix>
-        <Row type="flex" gutter={32}>
+        <Row type="flex" gutter={24}>
           <Col span={12}>
-            <Affix offsetTop={85}>
+            <Affix offsetTop={87}>
               <CodeDesignPreview
                 design={formDesign}
                 code={dropdownCode}
@@ -274,10 +272,7 @@ export default class Configure extends Component {
               changeOnSelect
             />
           </Col>
-
-
         </Row>
-
       </div>
     );
   }

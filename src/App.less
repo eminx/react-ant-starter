@@ -30,7 +30,7 @@
 @layout-body-background: @main-background;
 
 @border-radius: 2px;
-@text-shadow: 0 0 2px #fff;
+@text-shadow: 0 0 2px @paper-background;
 
 @basic-text-color: #313131;
 @second-text-color: #6F6F6F;
@@ -102,26 +102,31 @@ a {
 // ATOMS: BASIC ELEMENTS
 
 h1 {
-  color: @dr-darker-grey;
+  color: @primary-color;
   font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'system-light', sans-serif;
   font-weight: 300;
   text-shadow: @text-shadow;
 
+  &:not(.page-title) {
+    margin-bottom: 1em;
+  }
+
   &.page-title {
-    color: @primary-color;
+    color: @second-text-color;
     font-weight: 600;
   }
 }
 
 h2 {
-  font-weight: 400;
-  font-family: 'system-medium';
+  font-family: 'system-light';
+  color: @dr-darker-grey;
+  text-shadow: @text-shadow;
 }
 
 h3 {
-  font-weight: 300;
-  font-family: 'system-light';
+  font-family: 'system-medium';
   color: @dr-darker-grey;
+  text-shadow: @text-shadow;
 }
 
 .titleBack {
@@ -141,6 +146,7 @@ h3 {
 
 .ant-layout-content {
   // background-color: @dr-light-grey;
+  min-height: 100vh;
 }
 
 
@@ -150,6 +156,7 @@ h3 {
   .ant-layout-sider-children {
     position: fixed;
     width: 100%;
+    max-width: 240px;
   }
 
   .ant-menu-item-group-title {
@@ -402,11 +409,11 @@ h3 {
 
 .displayCard {
   display: inline-block;
-  padding: 1em;
+  width: 100%;
+  padding: 2em 1.5em 1em 1.5em;
   background-color: @paper-background;
   border: 1px solid @dr-light-grey;
   border-radius: @border-radius;
-  width: 100%;
   font-weight: 400;
 }
 

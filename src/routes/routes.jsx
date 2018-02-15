@@ -10,6 +10,8 @@ import Guidelines from './Guidelines';
 import Styles from './Styles';
 import Components from './Components';
 import LoginManager from './LoginManager';
+
+import Typography from './Typography';
 import Analysis from '../Components/Analysis/Analysis';
 import Configuration from '../Components/Configuration/Configuration';
 import Indication from '../Components/Indication/Indication';
@@ -22,13 +24,19 @@ export const renderRoutes = () => (
   	<BeeLayout router={browserHistory}>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/principles" component={Principles} />
-        <Route exact path="/guidelines" component={Guidelines} />
-        <Route exact path="/styles" component={Styles} />
+        <Route exact path="/layout-styles" component={Typography} />
+        <Route exact path="/navigation-styles" component={Typography} />
+        <Route exact path="/typography-styles" component={Typography} />
+        <Route exact path="/color-styles" component={Typography} />
+
         <Route exact path="/analysis-components" component={Analysis} />
         <Route exact path="/configuration-components" component={Configuration} />
         <Route exact path="/indication-components" component={Indication} />
         <Route exact path="/navigation-components" component={Navigation} />
+
+        <Route exact path="/principles" component={Principles} />
+        <Route exact path="/guidelines" component={Guidelines} />
+
         <Route exact path="/login" component={LoginManager} />
         <Route path="*" component={Components} />
       </Switch>
