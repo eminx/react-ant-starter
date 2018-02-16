@@ -121,6 +121,32 @@ const fontsCode = `
   }
 `;
 
+const paddingsDesign = <div>
+  <p>
+    Paddings between columns: <br />
+    <pre>24px</pre>
+  </p>
+  <Divider />
+  <p>
+    For other paddings, refer to Ant Design documentation.
+  </p>
+</div>
+
+const paddingsCode = `
+  // see "guttter" here. that's the padding.
+  <Row type="flex" gutter={24}>
+    <Col span={12}>
+      <Affix offsetTop={87}>
+        <CodeDesignPreview
+          design={formDesign}
+          code={dropdownCode}
+        />
+      </Affix>
+    </Col>
+    ...
+  </Row>
+`;
+
 
 export default class Typography extends Component {
 
@@ -257,20 +283,10 @@ export default class Typography extends Component {
         <h2>Paddings</h2>
         <Row type="flex" gutter={24}>
           <Col span={12} >
-            <CodeDesignPreview design={headingsDesign} code={headingsCode} />
+            <CodeDesignPreview design={paddingsDesign} code={paddingsCode} />
           </Col>
           <Col span={12}>
-            <h3>h1</h3>
-            <h1>This is Heading 1</h1>
-            <Divider />
 
-            <h3>h2</h3>
-            <h2>This is Heading 2</h2>
-            <Divider />
-
-            <h3>h3</h3>
-            <h3>This is Heading 3</h3>
-            <Divider />
           </Col>
         </Row>
 

@@ -45,7 +45,7 @@ html, body, #root {
   background-color: @layout-body-background;
 }
 
-p {
+p , .ant-dropdown-menu-item {
   color: @basic-text-color;
 }
 
@@ -171,6 +171,7 @@ h3 {
     position: fixed;
     width: 100%;
     max-width: 240px;
+    overflow-y: auto;
   }
 
   .ant-menu-item-group-title {
@@ -243,6 +244,13 @@ h3 {
   & > .ant-menu {
     background-color: @dr-lighter-grey;
   }
+
+  margin-bottom: 16px;
+}
+
+ul.ant-menu-sub.ant-menu-inline li.ant-menu-item {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .ant-menu-item-active, .ant-menu-submenu-active,

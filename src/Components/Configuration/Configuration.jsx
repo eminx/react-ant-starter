@@ -191,7 +191,7 @@ export default class Configure extends Component {
 
             <h3>Irreversible and dangerous actions</h3>
             <Popconfirm title="You will lose all your data. Are you sure?" okText="Yes" cancelText="No">
-              <Button size="large" type="danger" icon="exclamation-circle">Delete forever</Button>
+              <Button size="large" type="danger" icon="trash">Delete</Button>
             </Popconfirm>
             <Divider />
 

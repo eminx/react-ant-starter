@@ -62,6 +62,12 @@ export default class BeeNav extends Component {
             </NavLink>
           </Menu.Item>
 
+          <Menu.Item key="indication" >
+            <NavLink to={"/indication-components"}>
+              <span>Indication</span>
+            </NavLink>
+          </Menu.Item>
+
           <Menu.Item key="combo" >
             <NavLink to={"/combo-components"}>
               <span>Combo</span>
