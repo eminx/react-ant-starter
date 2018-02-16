@@ -33,7 +33,7 @@ const notifications =
     onItemClick={(item, tabProps) => {
       console.log(item, tabProps); // eslint-disable-line
     }}
-    popupAlign={{ offset: [20, -16] }}
+    popupAlign={{ offset: [0, -5] }}
   >
     <Notifications.Tab
       list={[]}
@@ -96,12 +96,12 @@ export default class BeeHeader extends Component {
           </div>
 
           <div style={profilePartsStyle}>
-            <Dropdown overlay={menu} trigger={["click"]}>
+            <Popover placement="bottom" title="User" content={menu} trigger="click" popupAlign={{ offset: [0, -15] }}>
               <span>
                 <Avatar icon="user" size="large" src={avatarSource} />
                 <span> Sylvia Plath</span>
               </span>
-            </Dropdown>
+            </Popover>
           </div>
         </div>
       </Header>
