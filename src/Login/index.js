@@ -18,7 +18,7 @@ const iconStyle = {
   textShadow: '0px 3px 3px #fff'
 }
 
-@Form.create()
+// @Form.create()
 class Login extends Component {
   static defaultProps = {
     className: '',

@@ -11,11 +11,15 @@ import Styles from './Styles';
 import Components from './Components';
 import LoginManager from './LoginManager';
 
+import Colors from './Colors';
+import Layout from './Layout';
+import Navigation from './Navigation';
 import Typography from './Typography';
+
 import Analysis from '../Components/Analysis/Analysis';
 import Configuration from '../Components/Configuration/Configuration';
 import Indication from '../Components/Indication/Indication';
-import Navigation from '../Components/Navigation/Navigation';
+import NavigationComponents from '../Components/Navigation/Navigation';
 
 const browserHistory = createBrowserHistory();
 
@@ -24,15 +28,15 @@ export const renderRoutes = () => (
   	<BeeLayout router={browserHistory}>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/layout-styles" component={Typography} />
-        <Route exact path="/navigation-styles" component={Typography} />
+        <Route exact path="/color-styles" component={Colors} />
+        <Route exact path="/layout-styles" component={Layout} />
+        <Route exact path="/navigation-styles" component={Navigation} />
         <Route exact path="/typography-styles" component={Typography} />
-        <Route exact path="/color-styles" component={Typography} />
 
         <Route exact path="/analysis-components" component={Analysis} />
         <Route exact path="/configuration-components" component={Configuration} />
         <Route exact path="/indication-components" component={Indication} />
-        <Route exact path="/navigation-components" component={Navigation} />
+        <Route exact path="/navigation-components" component={NavigationComponents} />
 
         <Route exact path="/principles" component={Principles} />
         <Route exact path="/guidelines" component={Guidelines} />

@@ -1,5 +1,5 @@
 {
-  "name": "thehive",
+  "name": "theHive",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "homepage": "http://gecekondu.eu/thehive",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"

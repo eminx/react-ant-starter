@@ -99,11 +99,11 @@ const fontsDesign = <div>
   </p>
   <p>
     However, there's one variatation for <b>h1</b> element and navigation main category label. They use the Digital Route branding
-    font: <pre>Titillium Web</pre>
+    font: <code>Titillium Web</code>
   </p>
   <p>
-    There provided three different font declarations in the css. So instead of using <pre>font-weight</pre>,
-    refer to using either of these fonts with <pre>font-family</pre>, which are: <pre>system-light</pre>, <pre>system-medium</pre> and <pre>system-bold</pre>
+    There provided three different font declarations in the css. So instead of using <code>font-weight</code>,
+    refer to using either of these fonts with <code>font-family</code>, which are: <code>system-light</code>, <code>system-medium</code> and <code>system-bold</code>
   </p>
 </div>
 
@@ -124,7 +124,7 @@ const fontsCode = `
 const paddingsDesign = <div>
   <p>
     Paddings between columns: <br />
-    <pre>24px</pre>
+    <code>24px</code>
   </p>
   <Divider />
   <p>

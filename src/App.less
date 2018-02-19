@@ -17,6 +17,7 @@
 @highlight-color        : @red-6;
 @warning-color          : @gold-6;
 @normal-color           : #d9d9d9;
+@code-color             : #a21919;
 
 
 @import "~antd/dist/antd.less";
@@ -81,6 +82,10 @@ body {
   font-family: "system-medium";
 }
 
+p {
+  font-family: "system-light";
+}
+
 a {
   font-family: system-light;
   margin-right: 4px;
@@ -141,6 +146,7 @@ h3 {
   font-family: 'system-medium';
   color: @dr-darker-grey;
   text-shadow: @text-shadow;
+  margin-top: 1em;
 }
 
 .titleBack {
@@ -432,7 +438,8 @@ ul.ant-menu-sub.ant-menu-inline li.ant-menu-item {
 .displayCard {
   display: inline-block;
   width: 100%;
-  padding: 2em 1.5em 1em 1.5em;
+  padding: 1em 1.5em;
+  margin-bottom: 1em;
   background-color: @paper-background;
   border: 1px solid @dr-light-grey;
   border-radius: @border-radius;
@@ -488,11 +495,25 @@ ul.ant-menu-sub.ant-menu-inline li.ant-menu-item {
 // }
 
 code, pre {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 14px;
-  color: @basic-text-color;
+  color: @code-color;
 }
 
-pre {
-  display: inline;
+img {
+  width: 100%;
+  height: auto;
+  border: 3px solid @code-color;
+}
+
+.thumb-image {
+  margin-top: 3em;
+  margin-left: 1em;
+  padding: 1em;
+  background-color: @paper-background;
+  border-radius: @border-radius;
+
+  img {
+    border-width: 1px;
+  }
 }
