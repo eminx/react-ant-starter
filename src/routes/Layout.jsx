@@ -11,7 +11,7 @@ export default class Navigation extends Component {
 
     return (
       <div style={{marginBottom: 200}}>
-        <h2>Overview of a basic layout</h2>
+        <h2>Overview of the basic layout</h2>
         <Row type="flex" gutter={24}>
           <Col span={24} >
             <img src="../../layout.png" />
