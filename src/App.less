@@ -1,6 +1,6 @@
 // DR Colors:
 @dr-light-grey: #F0F0F0;
-@dr-lighter-grey:#F5F5F6;
+@dr-lighter-grey:#F5F5F5;
 @dr-grey: #919191;
 @dr-dark-grey: #6F6E6E;
 @dr-darker-grey: #575656;
@@ -25,7 +25,7 @@
 @import "./Reusables/CodeDesignPreview.less";
 @import "./Components/Configuration/Configuration.less";
 
-@primary-color: #9254de; // ant purple
+@primary-color: #9254de;
 @main-background: #FEFEFF;
 @paper-background: #FFFFFE;
 @layout-body-background: @main-background;
@@ -87,13 +87,12 @@ p {
 }
 
 a {
-  font-family: system-light;
+  font-family: 'system-light';
   margin-right: 4px;
   margin-left: 4px;
 
   &, &:visited, &.ant-dropdown-link, &.ant-dropdown-trigger {
     color: @blue;
-    // font-family: "system-medium";
     &, &:hover, &:focus, &:active {
       text-decoration: none;
     }
@@ -118,7 +117,7 @@ a {
   color: inherit;
 }
 
-// ATOMS: BASIC ELEMENTS
+/* ATOMS: BASIC ELEMENTS */
 
 h1 {
   color: @primary-color;
@@ -150,7 +149,6 @@ h3 {
 }
 
 .titleBack {
-  // background-color: @dr-lighter-grey;
 }
 
 
@@ -165,12 +163,12 @@ h3 {
 }
 
 .ant-layout-content {
-  // background-color: @dr-light-grey;
+  /* background-color: @dr-light-grey; */
   min-height: 100vh;
 }
 
 
-// Layout - Nav
+/* Layout - Nav */
 
 .ant-layout-sider {
   .ant-layout-sider-children {
@@ -484,15 +482,6 @@ ul.ant-menu-sub.ant-menu-inline li.ant-menu-item {
   width: 50%;
 }
 
-// CONTAINER
-// .page-container {
-//   padding: 1em;
-//   background-color: @main-background;
-//
-//   .addEditConfigure-container {
-//
-//   }
-// }
 
 code, pre {
   font-size: 14px;

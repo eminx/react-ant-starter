@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import LoginItem from './LoginItem';
 import LoginTab from './LoginTab';
 import LoginSubmit from './LoginSubmit';
-import styles from './index.less';
 import './Login.less';
 
 const iconStyle = {
@@ -111,7 +110,6 @@ class Login extends Component {
                     <div>
                       <Tabs
                         animated={false}
-                        className={styles.tabs}
                         activeKey={type}
                         onChange={this.onSwitch}
                       >

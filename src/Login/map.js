@@ -1,13 +1,12 @@
 import React from 'react';
 import { Input, Icon } from 'antd';
-import styles from './index.less';
 
 const map = {
   UserName: {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="user" className={styles.prefixIcon} />,
+      prefix: <Icon type="user" />,
       placeholder: 'admin',
     },
     rules: [{
@@ -18,7 +17,7 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="lock" className={styles.prefixIcon} />,
+      prefix: <Icon type="lock" />,
       type: 'password',
       placeholder: '',
     },
@@ -30,7 +29,7 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="mobile" className={styles.prefixIcon} />,
+      prefix: <Icon type="mobile" />,
     placeholder: 'Phone number',
     },
     rules: [{
@@ -43,7 +42,7 @@ const map = {
     component: Input,
     props: {
       size: 'large',
-      prefix: <Icon type="mail" className={styles.prefixIcon} />,
+      prefix: <Icon type="mail" />,
       placeholder: '',
     },
     rules: [{

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Row, Col } from 'antd';
 import omit from 'omit.js';
-import styles from './index.less';
 import map from './map';
 
 const FormItem = Form.Item;
@@ -69,7 +68,6 @@ function generator({ defaultProps, defaultRules, type }) {
                 <Col span={8}>
                   <Button
                     disabled={count}
-                    className={styles.getCaptcha}
                     size="large"
                     onClick={this.onGetCaptcha}
                   >

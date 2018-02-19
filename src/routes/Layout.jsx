@@ -14,7 +14,9 @@ export default class Navigation extends Component {
         <h2>Overview of the basic layout</h2>
         <Row type="flex" gutter={24}>
           <Col span={24} >
-            <img src="../../layout.png" />
+            <div className="thumb-image">
+              <img src="../../layout.png" />
+            </div>
           </Col>
         </Row>
 
@@ -22,7 +24,7 @@ export default class Navigation extends Component {
         <Row gutter={24}>
         	<Col span={15}>
 		        <h2>Details</h2>
-		        <p>
+		        <p className="system-medium">
 		        	The layout is designed to accommodate basic layout elements like logo, heading,
 		        	navigations and a few helper widgets such as search, notifications etc.
 		        </p>
