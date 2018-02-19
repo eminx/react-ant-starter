@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Col, Divider } from 'antd';
+import { Row, Col, Divider, List } from 'antd';
+const ListItem = List.Item;
 
 export default class Navigation extends Component {
 
@@ -11,71 +12,67 @@ export default class Navigation extends Component {
 
     return (
       <div style={{marginBottom: 200}}>
-        <h2>Overview of a basic layout</h2>
-        <Row type="flex" gutter={24}>
-          <Col span={24} >
-            <img src="../../layout.png" />
+        <h2>Main navigation</h2>
+        <Row gutter={24} >
+          <h3>Elements composing the navigation</h3>
+          <Col span={9} >
+            <div class="thumb-image">
+			      	<img src="../../navigation-details.png" />
+			      </div>
+          </Col>
+          <Col span={14} >
+            <p className="system-medium">
+              Main navigation is composed of three different parts:
+            </p>
+            <List>
+              <ListItem>
+                <strong>Menu-item</strong>
+                <p>
+                  This element is the main navigation item. It is the only clickable item that runs the action to go to another page.
+                </p>
+                <p>
+                  If there's no menu enclosing this element; in other words if this is not a child of a collapsable menu, it must have
+                  an icon attached to it for visualisation purposes, on navigation collapse by clicking the button (on mobile and on-demand).
+                </p>
+              </ListItem>
+              <ListItem>
+                <strong>Menu</strong> (optional)
+                <p>
+                  This element is to be used as a wrapper, when there's more than 6 menu-items to be clicked.
+                  It must accommodate some relevance to its enclosing menu-items.
+                </p>
+                <p>
+                  If this element is used, it must have an icon for
+                  visualisation purposes.
+                </p>
+                <p>
+                  It only expands or collapses when clicked to allow navigating to its children. It is optional to use when necessary.
+                </p>
+              </ListItem>
+              <ListItem>
+                <strong>Menu category</strong> (optional)
+                <p>
+                  Similar to the "menu" as explained above, this is a category item intended to be used when there's a lot of content
+                  in an application, and thus navigation items. This is encouraged to use to also help user make sense of the overall
+                  application as a helper to the rest of the navigation items. It requires some work of delivering
+                  Information Architecture.
+                </p>
+                <p>
+                  It is not clickable, and meant to be there only to support its enclosing elements. It can be dismissed
+                  as it is also optional.
+                </p>
+              </ListItem>
+            </List>
           </Col>
         </Row>
 
         <Divider />
         <Row>
         	<Col span={15}>
-		        <h2>Details</h2>
-		        <p>
-		        	The layout is designed to accommodate basic layout elements like logo, heading, 
-		        	navigations and a few helper widgets such as search, notifications etc.
+		        <h2>Variant use-cases</h2>
+		        <p className="system-medium">
+		        	Below provided sample codes for using navigation for different purposes.
 		        </p>
-		      </Col>
-	      </Row>
-
-				<Row>
-					<Col span={15}>
-		        <h3>Heading</h3>
-		      	<p>
-		      		Heading is supposed to include the page title, and that's it.
-		      	</p>
-		      </Col>
-	      </Row>
-
-				<Row>
-					<Col span={15}>
-		      	<h3>Extra elements</h3>
-		      	<p>
-		      		Extra elements are also part of the header, like heading. Starting from the most right-top part of a
-		      		page, we can compose each of the extra elements from right to left, following the order of specificity to 
-		      		generality. Therefore we have put the "User-widget" to most right, and "Search" to most left.
-		      	</p>
-		      </Col>
-	      </Row>
-
-				<Row>
-					<Col span={15}>
-		      	<h3>Main navigation</h3>
-		      	<p>
-		      		Main navigation is the left sidebar where we include items to help users navigate to different content,
-		      		as well as help them make sense of the overall application.
-		      	</p>
-		      	<p>
-		      		It's assigned <code>max-width: 240px</code>, which shrinks automatically below 1280px - meaning the width of
-		      		smallest computer's display.
-		      	</p>
-		      </Col>
-	      </Row>
-
-				<Row>
-					<Col span={15}>
-		      	<h3>Main Content</h3>
-		      	<p>
-		      		Main content of the application is the main reason a user is at a given page, with the exception of the 
-		      		homepage/dashboard (where they land).
-		      	</p>
-		      	<p>
-		      		The Content part is where varying types of data will be displayed. This is where the magic happens.
-		      		The aim of utilising this space is to make sure it can scale no matter what we want to display, and also 
-		      		provide consistency in between pages and apps. Therefore there's a few of display types are suggested, using the 
-		      		<code>Grid</code> component from Ant Design specification.
-		      	</p>
 		      </Col>
 	      </Row>
 
