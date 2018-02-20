@@ -45,6 +45,8 @@ export default class Navigation extends Component {
 		     	</Col>
 	      </Row>
 
+        <Divider />
+
 				<Row gutter={24}>
 					<Col span={15}>
 		      	<h3>Extra elements</h3>
@@ -60,6 +62,8 @@ export default class Navigation extends Component {
 			      </div>
 		     	</Col>
 	      </Row>
+
+        <Divider />
 
 				<Row gutter={24}>
 					<Col span={15} >
@@ -79,6 +83,8 @@ export default class Navigation extends Component {
 			      </div>
 		     	</Col>
 	      </Row>
+
+        <Divider />
 
 				<Row gutter={24}>
 					<Col span={15}>
