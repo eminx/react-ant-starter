@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: designsystem
+  namespace: eye-dazzler
+  labels:
+    app: designsystem
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: designsystem
+  template:
+    metadata:
+      labels:
+        app: designsystem
+    spec:
+      containers:
+      - name: app
+        image: 381413151357.dkr.ecr.eu-west-1.amazonaws.com/eye-dazzler/designsystem:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: designsystem
+  namespace: eye-dazzler
+  labels:
+    run: designsystem
+spec:
+  ports:
+    - port: 80
+      targetPort: 5000
+  selector:
+    app: designsystem
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: designsystem
+  namespace: eye-dazzler
+spec:
+  rules:
+  - host: designsystem.dazzler-dev.digitalroute.net
+    http:
+      paths:
+      - backend:
+          serviceName: designsystem
+          servicePort: 80
