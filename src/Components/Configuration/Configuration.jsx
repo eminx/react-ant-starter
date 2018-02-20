@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Affix, Row, Col, Tabs, Popconfirm, Menu, Dropdown, Icon, Divider, Input, InputNumber, Radio, Switch, Checkbox, AutoComplete, Cascader, Popover, Button } from 'antd';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 import CodeDesignPreview from '../../Reusables/CodeDesignPreview';
 const CheckboxGroup = Checkbox.Group;
 const RadioGroup = Radio.Group;
 const SubMenu = Menu.SubMenu;
-const TabPane = Tabs.TabPane;
 
 const dropdownMenu = (
   <Menu>
