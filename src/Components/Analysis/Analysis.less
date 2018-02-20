@@ -1,4 +1,46 @@
+// TABLE
+
 .ant-table {
   font-family: 'system-medium';
   font-size: 14px;
+  color: @basic-text-color;
+}
+
+.ant-table {
+  .ant-table-thead > tr > th {
+    color: @second-text-color;
+  }
+
+  tbody tr {
+    background-color: @paper-background;
+  }
+}
+
+
+// COLLAPSE / ACCORDION
+.ant-collapse {
+
+  &, &-borderless {
+    background-color: inherit;
+    font-family: 'system-light';
+  }
+
+  & > &-item {
+    background-color: @paper-background;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border-width: 0;
+    overflow: hidden;
+  }
+
+  & > &-item > &-header {
+    color: @second-text-color;
+    text-shadow: @text-shadow;
+    font-size: 1.1em;
+  }
+
+  & > &-item > &-content p {
+    color: @basic-text-color;
+    font-family: 'system-medium';
+  }
 }

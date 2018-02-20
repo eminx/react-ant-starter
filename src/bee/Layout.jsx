@@ -49,7 +49,7 @@ export default class BeeLayout extends Component {
             {this.props.router.location.pathname}
           </BeeHeader>
           <Content style={{ display: 'flex', margin: 0, padding: '2em', height: '100%', marginBottom: 100 }}>
-            <div style={{flexBasis: '75%'}} >
+            <div style={{flexBasis: '80%'}} >
               {this.props.children}
             </div>
 

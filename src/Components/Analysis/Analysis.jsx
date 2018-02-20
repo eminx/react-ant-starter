@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOMServer from 'react-dom/server'
-import { Row, Col, Table, Button } from 'antd';
+import { Row, Col, Button, Divider, Timeline, Table, Collapse, } from 'antd';
 import CodeDesignPreview from '../../Reusables/CodeDesignPreview';
-import { dataBasic, columnsBasic, dataFilter, columnsFilter, columnsBordered, dataBordered } from './Tables';
+import DazzlerTabs from '../../Reusables/DazzlerTabs';
+import { dataBasic, columnsBasic, dataFilter, columnsFilter, columnsBordered, dataBordered, columnsFixed, dataFixed } from './Tables';
+const Panel = Collapse.Panel;
 
 const columns = [{
   title: 'Name',
@@ -42,6 +44,46 @@ const tableCode = `
   scroll={{ y: 240 }}
 />
 `
+
+const textPanel = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
+
+const customPanelStyle = {
+  background: '#f7f7f7',
+  borderRadius: 4,
+  marginBottom: 24,
+  border: 0,
+  overflow: 'hidden',
+};
+
+const contentItemsForTabs = [
+  {
+    title: 'A tab', // must be string
+    contentNode: <p>You can provide a paragraph node</p>
+  }, {
+    title: 'Another tab',
+    contentNode:
+      <div>
+        <h3>Or you can provide an h3 and a table</h3>
+        <Table
+          columns={columnsBasic}
+          dataSource={dataBasic}
+          pagination={{ pageSize: 50 }}
+          scroll={{ y: 240 }}
+        />
+    </div>
+  }, {
+    title: 'Yet another tab',
+    contentNode:
+      <div>
+        It can basically be any kind or a set of react components. Make sure to enclose it in <code>div</code> or so,
+        if you use multiple of them.
+      </div>
+  }
+]
 
 export default class Analysis extends Component {
   state = {
@@ -113,34 +155,44 @@ export default class Analysis extends Component {
 
     return (
       <div>
+        <h2>Tables</h2>
+        <p>Tables are the most common way to display a large sets of data in relation to each other, to provide quick overview & analysis</p>
+        <p>Below you will find several examples of table components styled up for Digital Route.</p>
+        <Divider />
+        <h3>Simple, with fixed header</h3>
         <Row gutter={24}>
           <Col span={9}>
             <CodeDesignPreview design={tableDesign} code={tableCode} />
           </Col>
           <Col span={15}>
             <Table
-              columns={columnsFilter}
-              dataSource={dataFilter}
+              columns={columnsBasic}
+              dataSource={dataBasic}
               pagination={{ pageSize: 50 }}
               scroll={{ y: 240 }}
             />
           </Col>
         </Row>
 
+        <Divider />
+
+        <h3>Sortable & filterable</h3>
         <Row gutter={24}>
           <Col span={9}>
             <CodeDesignPreview design={tableDesign} code={tableCode} />
           </Col>
           <Col span={15}>
-            <div className="table-operations">
-              <Button onClick={this.setAgeSort}>Sort age</Button>
-              <Button onClick={this.clearFilters}>Clear filters</Button>
-              <Button onClick={this.clearAll}>Clear filters and sorters</Button>
+            <div style={{marginBottom: 14, display: 'flex', justifyContent: 'space-evenly'}}>
+              <a onClick={this.setAgeSort}>Sort age</a>
+              <a onClick={this.clearFilters}>Clear filters</a>
+              <a onClick={this.clearAll}>Clear filters and sorters</a>
             </div>
             <Table columns={columnsFilter} dataSource={dataFilter} onChange={this.handleChange} />
           </Col>
         </Row>
 
+        <Divider />
+        <h3>With header, footer & bordered</h3>
         <Row gutter={24}>
           <Col span={9}>
             <CodeDesignPreview design={tableDesign} code={tableCode} />
@@ -155,6 +207,82 @@ export default class Analysis extends Component {
             />
           </Col>
         </Row>
+
+        <Divider />
+
+        <h3>Fixed and scrollable columns</h3>
+        <Row gutter={24}>
+          <Col span={9}>
+            <CodeDesignPreview design={tableDesign} code={tableCode} />
+          </Col>
+          <Col span={15}>
+            <Table
+              columns={columnsFixed}
+              dataSource={dataFixed}
+              scroll={{ x: 800 }}
+            />
+          </Col>
+        </Row>
+
+        <Divider />
+
+        <h2>Collapse</h2>
+        <Row gutter={24}>
+          <Col span={9}>
+            <CodeDesignPreview design={tableDesign} code={tableCode} />
+          </Col>
+          <Col span={15}>
+            <Collapse bordered={false} defaultActiveKey={['1']}>
+              <Panel header="This is panel header 1" key="1" >
+                <p>{textPanel}</p>
+              </Panel>
+              <Panel header="This is panel header 2" key="2" >
+                <p>{textPanel}</p>
+              </Panel>
+              <Panel header="This is panel header 3" key="3" >
+                <p>{textPanel}</p>
+              </Panel>
+            </Collapse>
+          </Col>
+        </Row>
+
+        <Divider />
+
+        <h2>Tabs</h2>
+        <Row gutter={24}>
+          <Col span={9}>
+            <CodeDesignPreview design={tableDesign} code={tableCode} />
+          </Col>
+          <Col span={15}>
+            <DazzlerTabs contentItems={contentItemsForTabs} />
+          </Col>
+        </Row>
+
+        <Divider />
+
+        <h2>Timeline</h2>
+        <Row gutter={24}>
+          <Col span={9}>
+            <CodeDesignPreview design={tableDesign} code={tableCode} />
+          </Col>
+          <Col span={15}>
+            <Timeline>
+              <Timeline.Item color="green">Create a services site 2015-09-01</Timeline.Item>
+              <Timeline.Item color="green">Create a services site 2015-09-01</Timeline.Item>
+              <Timeline.Item color="red">
+                <p>Solve initial network problems 1</p>
+                <p>Solve initial network problems 2</p>
+                <p>Solve initial network problems 3 2015-09-01</p>
+              </Timeline.Item>
+              <Timeline.Item>
+                <p>Technical testing 1</p>
+                <p>Technical testing 2</p>
+                <p>Technical testing 3 2015-09-01</p>
+              </Timeline.Item>
+            </Timeline>
+          </Col>
+        </Row>
+
       </div>
     )
   }
