@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Icon, Input, AutoComplete, Progress, Alert } from 'antd';
-import { NavLink } from 'react-router-dom';
+import { Layout, Icon, Input, AutoComplete, Progress, Alert, Breadcrumb } from 'antd';
+import { Link } from 'react-router-dom';
 import BeeNav from './Nav';
 import BeeHeader from './Header';
 const { Header, Sider, Content } = Layout;
@@ -17,6 +17,13 @@ const flexiAlert = flexi;
 const flexiProgress = flexi;
 flexiAlert.height = 120;
 flexiProgress.height = 170;
+
+const breadcrumb =
+<Breadcrumb>
+  <Breadcrumb.Item><a href="/">Home</a></Breadcrumb.Item>
+  <Breadcrumb.Item><a href="">Applications List</a></Breadcrumb.Item>
+  <Breadcrumb.Item>An Application</Breadcrumb.Item>
+</Breadcrumb>;
 
 export default class BeeLayout extends Component {
   state = {
@@ -41,7 +48,7 @@ export default class BeeLayout extends Component {
           collapsed={this.state.collapsed}
           onCollapse={this.toggleSider}
         >
-          <div className="logo logoDR" />
+          <Link to="/"><div className="logo logoDR" /></Link>
           <BeeNav />
         </Sider>
         <Layout style={{ background: '#F0F0F0' }}>
@@ -50,6 +57,7 @@ export default class BeeLayout extends Component {
           </BeeHeader>
           <Content style={{ display: 'flex', margin: 0, padding: '2em', height: '100%', marginBottom: 100 }}>
             <div style={{flexBasis: '80%'}} >
+              {breadcrumb}
               {this.props.children}
             </div>
 

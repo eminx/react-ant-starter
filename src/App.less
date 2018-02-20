@@ -25,6 +25,11 @@
 @import "./Reusables/CodeDesignPreview.less";
 @import "./Components/Configuration/Configuration.less";
 @import "./Components/Analysis/Analysis.less";
+@import "./Components/Indication/Indication.less";
+@import "./Components/Navigation/Navigation.less";
+
+@logolink: url('https://s3.eu-central-1.amazonaws.com/nodal-gatherings/dr-logo.png');
+@amblemlink: url('https://s3.eu-central-1.amazonaws.com/nodal-gatherings/dr-amblem.png');
 
 @primary-color: #9254de;
 @main-background: #FEFEFF;
@@ -107,7 +112,7 @@ a {
     }
   }
 
-  &:not(.ant-dropdown-trigger) {
+  &:not(.ant-dropdown-trigger, .ant-notification-notice-close, .ant-alert-close-icon) {
     &, &:hover, &:focus {
       border-bottom: 1px solid @blue;
     }
@@ -131,7 +136,7 @@ h1 {
   }
 
   &.page-title {
-    color: @second-text-color;
+    color: @dr-dark-grey;
     font-weight: 600;
   }
 }
@@ -154,13 +159,36 @@ h3 {
 
 
 .logoDR {
-  margin-top: 15px;
-  background-image: url('http://stamenkovic.se/wp-content/uploads/2014/11/digitalroute.png');
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-image: @logolink;
   width: 100%;
-  height: 90px;
-  background-size: 160px 90px;
+  height: 71px;
+  background-size: 180px 71px;
   background-repeat: no-repeat;
   background-position: center;
+  filter: grayscale(100%) opacity(80%);
+  -webkit-filter: grayscale(100%) opacity(80%);
+  transition: all .3s ease-in-out;  
+
+
+  &:hover {
+    filter: none;
+    -webkit-filter: none;
+  }
+}
+
+.ant-layout-sider-collapsed.ant-layout-sider {
+  .ant-layout-sider-children {
+    max-width: 70px;
+  }
+
+  .logoDR {
+    margin-left: 5px;
+    background-image: @amblemlink;
+    height: 50px;
+    background-size: 60px 50px;
+  }
 }
 
 .ant-layout-content {
@@ -177,6 +205,7 @@ h3 {
     width: 100%;
     max-width: 240px;
     overflow-y: auto;
+    padding-bottom: 60px;
   }
 
   .ant-menu-item-group-title {

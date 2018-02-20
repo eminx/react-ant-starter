@@ -1,11 +1,12 @@
 .ant-btn {
   border: 1px solid @dr-grey;
-  color: @dr-dark-grey;
+  color: @basic-text-color;
+  font-family: 'system-light';
 
   &:hover, &:focus {
     background-color: @paper-background;
     border-color: @dr-dark-grey;
-    color: @dr-dark-grey;
+    color: @dr-darker-grey;
   }
 
   &:active {
@@ -43,7 +44,13 @@
 
 .ant-popover-buttons {
   .ant-btn.ant-btn-primary {
-    color: @paper-background;
-    background-color: @dr-dark-grey;
+    color: @dr-darker-grey;
+    background-color: @main-background;
+    border-color: @dr-grey;
+
+    &:focus, &:active {
+      border-color: @dr-darker-grey;
+      box-shadow: inset 0 0 0 1px @dr-darker-grey;
+    }
   }
 }

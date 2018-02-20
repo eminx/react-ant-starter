@@ -42,7 +42,7 @@ function generator({ defaultProps, defaultRules, type }) {
         }, 1000);
       }
       render() {
-        const { getFieldDecorator } = this.context.form;
+        const { getFieldDecorator } = this.props.form;
         const options = {};
         let otherProps = {};
         const { onChange, defaultValue, rules, name, ...restProps } = this.props;

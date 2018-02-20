@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Layout, Badge, Icon, Popover, Tabs, Spin, Menu, Dropdown, Avatar } from 'antd';
 import Notifications from './Notifications';
+import { ICONS } from '../constants/ICONS';
+import DRIcon from '../Reusables/DRIcon/DRIcon';
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -84,7 +86,7 @@ export default class BeeHeader extends Component {
 
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <div style={{paddingRight: 50, paddingTop: 5}}>
-            <Icon type="search" style={{fontSize: 24, fontWeight: 300}} />
+            <DRIcon icon={ICONS.SEARCH} />
           </div>
 
           <div style={{paddingRight: 30, paddingTop: 5}}>
