@@ -9,12 +9,7 @@ export default class Guidelines extends Component {
     return (
       <div style={{height: '100%'}}>
         <div className="displayCard" style={{width: '62%'}}>
-          {designGuidelines.map(item => (
-            <ListItem>
-              <h2>{item.title}</h2>
-              <p>{item.content}</p>
-            </ListItem>
-          ))}
+          Content will come soon.
         </div>
       </div>
     );
